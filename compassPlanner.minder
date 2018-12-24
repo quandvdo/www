@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<minder>
+  <theme name="Default" index="10"/>
+  <layout name="Horizontal"/>
+  <drawarea x="206.15185546875" y="-115.95947265625" scale="1"/>
+  <images/>
+  <nodes>
+    <node id="0" posx="261.84814453125" posy="503.95947265625" maxwidth="200" width="120" height="28" side="right" fold="false" treesize="790">
+      <nodename>CompassTravel</nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="1" posx="431.84814453125" posy="255.95947265625" maxwidth="200" width="65" height="28" side="right" fold="false" treesize="296" color="#c6262e">
+          <nodename>Activity</nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="11" posx="548.84814453125" posy="141.95947265625" maxwidth="200" width="58" height="28" side="right" fold="false" treesize="68" color="#c6262e">
+              <nodename>Types</nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="3" posx="658.84814453125" posy="122.95947265625" maxwidth="200" width="76" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Package</nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="2" posx="658.84814453125" posy="160.95947265625" maxwidth="200" width="55" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Tours</nodename>
+                  <nodenote></nodenote>
+                </node>
+              </nodes>
+            </node>
+            <node id="13" posx="548.84814453125" posy="236.95947265625" maxwidth="200" width="64" height="28" side="right" fold="false" treesize="106" color="#c6262e">
+              <nodename>Details</nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="33" posx="664.84814453125" posy="198.95947265625" maxwidth="200" width="80" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Intinerary</nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="34" posx="664.84814453125" posy="236.95947265625" maxwidth="200" width="66" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Include&amp;E x</nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="35" posx="664.84814453125" posy="274.95947265625" maxwidth="200" width="53" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Price</nodename>
+                  <nodenote></nodenote>
+                </node>
+              </nodes>
+            </node>
+            <node id="26" posx="548.84814453125" posy="350.95947265625" maxwidth="200" width="90" height="28" side="right" fold="false" treesize="106" color="#c6262e">
+              <nodename>Categories</nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="27" posx="690.84814453125" posy="312.95947265625" maxwidth="200" width="106" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Normal Tours</nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="28" posx="690.84814453125" posy="350.95947265625" maxwidth="200" width="63" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Luxury</nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="29" posx="690.84814453125" posy="388.95947265625" maxwidth="200" width="64" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+                  <nodename>Nature</nodename>
+                  <nodenote></nodenote>
+                </node>
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+        <node id="4" posx="431.84814453125" posy="445.95947265625" maxwidth="200" width="51" height="28" side="right" fold="false" treesize="68" color="#f37329">
+          <nodename>User</nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="30" posx="534.84814453125" posy="426.95947265625" maxwidth="200" width="57" height="28" side="right" fold="false" treesize="30" color="#f37329">
+              <nodename>Roles</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="31" posx="534.84814453125" posy="464.95947265625" maxwidth="200" width="64" height="28" side="right" fold="false" treesize="30" color="#f37329">
+              <nodename>Details</nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+        <node id="6" posx="431.84814453125" posy="540.95947265625" maxwidth="200" width="72" height="28" side="right" fold="false" treesize="106" color="#f9c440">
+          <nodename>Booking</nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="8" posx="555.84814453125" posy="502.95947265625" maxwidth="200" width="88" height="28" side="right" fold="false" treesize="30" color="#f9c440">
+              <nodename>Activity_ID</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="9" posx="555.84814453125" posy="540.95947265625" maxwidth="200" width="74" height="28" side="right" fold="false" treesize="30" color="#f9c440">
+              <nodename>User_ID</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="32" posx="555.84814453125" posy="578.95947265625" maxwidth="200" width="51" height="28" side="right" fold="false" treesize="30" color="#f9c440">
+              <nodename>Date</nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+        <node id="20" posx="431.84814453125" posy="635.95947265625" maxwidth="200" width="77" height="28" side="right" fold="false" treesize="68" color="#c6262e">
+          <nodename>Payment</nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="21" posx="560.84814453125" posy="616.95947265625" maxwidth="200" width="96" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+              <nodename>Payment_id</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="22" posx="560.84814453125" posy="654.95947265625" maxwidth="200" width="91" height="28" side="right" fold="false" treesize="30" color="#c6262e">
+              <nodename>Booking_id</nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+        <node id="23" posx="431.84814453125" posy="711.95947265625" maxwidth="200" width="65" height="28" side="right" fold="false" treesize="68" color="#f37329">
+          <nodename>Invoice</nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="24" posx="548.84814453125" posy="692.95947265625" maxwidth="200" width="84" height="28" side="right" fold="false" treesize="30" color="#f37329">
+              <nodename>Invoice_id</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="25" posx="548.84814453125" posy="730.95947265625" maxwidth="200" width="91" height="28" side="right" fold="false" treesize="30" color="#f37329">
+              <nodename>Booking_id</nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+        <node id="7" posx="431.84814453125" posy="825.95947265625" maxwidth="200" width="74" height="28" side="right" fold="false" treesize="144" color="#68b723">
+          <nodename>Inquiries</nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="15" posx="557.84814453125" posy="768.95947265625" maxwidth="200" width="86" height="28" side="right" fold="false" treesize="30" color="#68b723">
+              <nodename>Inquiry_ID</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="17" posx="557.84814453125" posy="806.95947265625" maxwidth="200" width="42" height="28" side="right" fold="false" treesize="30" color="#68b723">
+              <nodename>title</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="18" posx="557.84814453125" posy="844.95947265625" maxwidth="200" width="54" height="28" side="right" fold="false" treesize="30" color="#68b723">
+              <nodename>email</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="19" posx="557.84814453125" posy="882.95947265625" maxwidth="200" width="47" height="28" side="right" fold="false" treesize="30" color="#68b723">
+              <nodename>msg</nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+</minder>
