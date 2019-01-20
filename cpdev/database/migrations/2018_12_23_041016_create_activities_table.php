@@ -17,9 +17,10 @@ class CreateActivitiesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->unsignedInteger('category_id')->default(1);
-            $table->text('description');
-            $table->text('highlight');
-            $table->text('itinerary');
+            $table->text('description')->nullable();
+            $table->text('highlight')->nullable();
+            $table->text('itinerary')->nullable();
+            $table->string('slug');
             $table->boolean('isActive')->default(true);
             $table->boolean('isInquiry')->default(true);
             $table->boolean('isDiscount')->default(false);

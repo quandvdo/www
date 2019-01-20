@@ -52,5 +52,6 @@ class CreateBasketsTable extends Migration
     {
         Schema::dropIfExists('baskets');
         Schema::dropIfExists('basket_types');
+        Schema::dropIfExists('basket_items');
     }
 }
