@@ -49,11 +49,8 @@
 
     {{--Section 2 Destinations--}}
     <section id="section2">
-
         <div class="container">
-
             <h2 class="black front">Popular Destinations</h2>
-
             <div class="row mb-5">
                 <div class="col-sm-9 front">
                     <div class="separator "></div>
@@ -61,10 +58,9 @@
                 </div>
 
                 <div class="col-sm-3 front my-auto">
-                    <a class="btn btn-primary   mt-2 px-5 py-2" href="#" role="button">more destinations</a>
+                    <a class="btn btn-primary mt-2 px-5 py-2" href="{{route('destination.index')}}" role="button">more destinations</a>
                 </div>
             </div>
-
         </div>
 
         <div class="container destination-section">
@@ -101,7 +97,7 @@
                     <h5 class="primary-color section-title ">Best &amp; More Popular Tours</h5>
                 </div>
                 <div class="col-sm-3 front my-auto">
-                    <a class="btn btn-primary   mt-2 px-5 py-2" href="#" role="button">more tours</a>
+                    <a class="btn btn-primary   mt-2 px-5 py-2" href="{{route('tour.index')}}" role="button">more tours</a>
                 </div>
             </div>
         </div>
@@ -116,7 +112,7 @@
                                 <small class="white front"><span
                                             class="far fa-clock mr-2 white"></span><strong>{{rand(1,15)}}</strong><br>days
                                 </small>
-                                <a class="img-card" href="/tours/{{str_slug($activity->name,'-')}}">
+                                <a class="img-card" href="/tours/{{$activity->slug}}">
                                     <img src="https://picsum.photos/360/200?image={{rand(1,1000)}}" alt="image"/>
                                 </a>
                                 <div class="card-content">
@@ -132,11 +128,11 @@
                                            role="button">{{$activity->category->name}}</a>
                                     </div>
                                     <h6 class="primary-color text-right">
-                                        ${{number_format($activity->price->price,2)}}</h6>
-                                    <h6 class="black"><a href="/tours/{{str_slug($activity->name,'-')}}"
+                                        ${{number_format($activity->activePrice()->price,2)}}</h6>
+                                    <h6 class="black"><a href="/tours/{{$activity->slug}}"
                                                          target="_blank">{{$activity->name}}</a></h6>
                                     <p class="">
-                                        {{$activity->description}}<a href="/tours/{{str_slug($activity->name,'-')}}"
+                                        {{$activity->description}}<a href="/tours/{{$activity->slug}}"
                                                                      target="_blank"><span>... See more</span></a>
                                     </p>
                                 </div>
@@ -172,7 +168,8 @@
                                     <p class="white text-center">{{$blog->created_at->format('M')}}</p>
                                 </div>
                                 <div class="media-body mt-sm-0 mt-3  align-self-center">
-                                    <a class="title-blog black" href="/blog/{{ $blog->slug }}"><h6 class="mt-0 ">{{$blog->title}}</h6></a>
+                                    <a class="title-blog black" href="/blog/{{ $blog->slug }}"><h6
+                                                class="mt-0 ">{{$blog->title}}</h6></a>
                                     <p class="">{{$blog->subtitle}}</p>
                                     <div class="meta-bottom d-flex justify-content-between">
                                         <p class="primary-color"><span class="far primary-color fa-heart"></span> 0
@@ -190,12 +187,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a href="/blog" class="btn btn-primary">Browse all blogs</a>
+                    <a href="{{route('blog.index')}}" class="btn btn-primary">Browse all blogs</a>
                 </div>
             </div>
         </div>
         <div class="chapter2">
-            <img class="curve2" src="svg/curve.svg" alt="image">
+            <img class="curve2" src="{{asset('svg/curve.svg')}}" alt="image">
         </div>
     </section>
     <!-- End section 3 tours-->
@@ -204,7 +201,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2 col-10 offset-1">
                     <h3 class="text-center  mb-4 black"><strong>Tour Experts</strong></h3>
-                    <img class="svgcenter quotesicon" src="svg/quotes.svg" alt="image">
+                    <img class="svgcenter quotesicon" src="{{asset('svg/quotes.svg')}}" alt="image">
 
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
@@ -257,7 +254,7 @@
             <div class="row">
                 <div class="col-lg-10 col-12 mt-3 mt-lg-5 mx-auto">
                     <a class="popup-vimeo" href="https://vimeo.com/71319358?autoplay=1">
-                        <img src="images/lakegirl.jpg" class="img-fluid video-call" alt="image">
+                        <img src="{{asset('images/lakegirl.jpg')}}" class="img-fluid video-call" alt="image">
                         <div class="play-center">
                             <i class="far fa-7x fa-play-circle"></i>
                         </div>
@@ -270,24 +267,23 @@
 
     {{--Call to Action--}}
     <section id="sectioncta">
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 ">
-                    <div class="bs-calltoaction  bs-calltoaction-default">
+                    <div class="bs-calltoaction bs-calltoaction-default">
                         <div class="row">
                             <div class="col-md-9  cta-contents ">
                                 <h6 class="cta-title ml-lg-5 ml-2 mt-md-3 mt-0 bold white">Explore it all. The sky is
                                     the limit!</h6>
                             </div>
                             <div class="col-md-3 mr-5  cta-button">
-                                <a href="#" class="btn btn-block px-3 mr-5 btn-primary">Call us now</a>
+                                <a href="{{route('contact')}}" class="btn btn-block px-3 mr-5 btn-primary">Call us
+                                    now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 @endsection

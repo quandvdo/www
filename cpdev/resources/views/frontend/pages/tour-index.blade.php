@@ -1,15 +1,10 @@
 @extends('frontend._layout.main')
 
 @section('content')
-    <!-- Title section 1 -->
-    <div class="tour-title not-fixed center-image">
-
-        <img class="w-100 h-100" src="{{asset('images/search.jpg')}}" alt="">
-        <h1 class="white text-center front shadow-text center-text">Find your Tour</h1>
-        <img class="curve2 front" src="{{asset('svg/curve.svg')}}" alt="">
-
-    </div>
-    <!-- End section 1-->
+    @component('frontend.components.subheader',
+    ['title' => 'Find Your Perfect Tour',
+    'img' => 'search.jpg'])
+    @endcomponent
 
     <!-- Section 3 Tours-->
     <section id="section3" class="tour-list-sidebar tour-list-sidebar-2-col">
@@ -142,7 +137,7 @@
                     @foreach($tours->chunk(4) as $item)
                         <div class="col-xs-12 col-md-6 col-lg-4">
                             @foreach($item as $tour)
-                                <a class="card-full" href="{{$tour->slug}}">
+                                <a class="card-full" href="tours/{{$tour->slug}}">
                                     <div class="card-image-holder mb-4">
                                         <img class="w-100 h-100"
                                              src="https://picsum.photos/550/367?image={{rand(800,900)}}"
@@ -155,11 +150,11 @@
                                         <div class="card-content front col-12 align-items-center w-100">
                                             <div class="row  align-items-center">
                                                 <div class="col-7">
-                                                    <h6 class="white mb-1">{{$tour->name}}</h6>
+                                                    <h6 class="white mb-1">{{$tour->title}}</h6>
                                                 </div>
                                                 <div class="col-5 align-middle pr-4">
                                                     <h6 class="white text-right mb-0">
-                                                        ${{number_format($tour->price->price,2)}}</h6>
+                                                        ${{number_format($tour->activePrice()->price,2)}}</h6>
                                                     <div class="review-card-image text-right mb-2 pb-1 mr-0">
                                                         @for($i = 0 ; $i < rand(3,5);$i++)
                                                             <i class="fas fa-star"></i>
@@ -175,7 +170,7 @@
 
                         </div>
                     @endforeach
-                    {{$tours->links()}}
+
                 @else
                     <div class="col">
                         <h6>There are currently no available tours. Please try again. Thank you</h6>
@@ -183,6 +178,7 @@
                 @endif
 
             </div>
+            {{$tours->links()}}
         </div>
     </section><!-- End section 3 tours-->
 

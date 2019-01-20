@@ -16,6 +16,7 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('location');
             $table->unsignedInteger('category_id')->default(1);
             $table->text('description')->nullable();
             $table->text('highlight')->nullable();
@@ -25,6 +26,7 @@ class CreateActivitiesTable extends Migration
             $table->boolean('isInquiry')->default(true);
             $table->boolean('isDiscount')->default(false);
             $table->boolean('isPackage')->default(true);
+            $table->boolean('isFeature')->default(false);
             $table->timestamps();
         });
     }

@@ -1,19 +1,13 @@
 @extends('frontend._layout.main')
 
 @section('content')
-    <!-- Title section 1 -->
-    <div class="tour-title not-fixed ">
 
-        <img class="w-100 h-100" src="{{asset('images/blog-single.jpg')}}" alt="">
-        <h1 class="white text-center front shadow-text center-text">Recent blogs</h1>
-        <img class="curve2 front" src="{{asset('svg/curve.svg')}}" alt="">
-
-    </div>
-    <!-- End section 1-->
-
+    @component('frontend.components.subheader',
+['title' => 'Recent Blogs',
+'img' => 'blog-single.jpg'])
+    @endcomponent
 
     <section id="section3" class="tour-list-sidebar tour-list-sidebar-2-col">
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-lg-3 ml-lg-5 order-lg-first order-last mt-3 mt-lg-0">
@@ -105,7 +99,7 @@
                                 </div>
                             @endforeach
                             {{ $blogs->links() }}
-                            @else
+                        @else
                             <h6>There are no recent news, please check again later. Thank you</h6>
                         @endif
                     </div>
