@@ -25,6 +25,8 @@ $factory->define(\App\Models\Activity\Activity::class, function (Faker $faker) {
         'description' => $faker->text(200),
         'highlight' => $faker->text(200),
         'itinerary' => $faker->text(200),
+        'duration' => $faker->numberBetween(1,20),
+        'age' =>$faker->numberBetween(12,65),
         'slug' => str_replace(' ', '-', $name),
         'isFeature' => $faker->boolean(40)
     ];

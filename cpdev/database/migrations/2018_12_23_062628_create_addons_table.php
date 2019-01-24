@@ -15,19 +15,14 @@ class CreateAddonsTable extends Migration
     {
         Schema::create('addons', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('activity_id');
             $table->string('name');
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->decimal('price', 13, 2);
             $table->unsignedInteger('type')->default(1)->comment('1 shop item, 2 gift item');
             $table->string('img');
             $table->boolean('isActive')->default(true);
-            $table->timestamps();
-        });
-
-        Schema::create('addon_qualifies', function (Blueprint $table) {
-            $table->unsignedInteger('activity_id');
-            $table->unsignedInteger('addon_id');
             $table->timestamps();
         });
     }
@@ -40,6 +35,5 @@ class CreateAddonsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('addons');
-        Schema::dropIfExists('addon_qualifies');
     }
 }

@@ -24,6 +24,9 @@ Route::namespace('Frontend')->group(function(){
     Route::get('destinations', 'MainController@destinationIndex')->name('destination.index');
     Route::get('destinations/{slug}', 'MainController@destinationDetail')->name('destination.detail');
 
+    Route::get('categories', 'MainController@categoriesIndex')->name('category.index');
+    Route::get('categories/{slug}', 'MainController@categoriesDetail')->name('category.detail');
+
     Route::get('blogs', 'MainController@blogIndex')->name('blog.index');
     Route::get('blogs/recents', 'MainController@blogIndex')->name('blog.recent');
     Route::get('blogs/{slug}', 'MainController@blogDetail')->name('blog.detail');

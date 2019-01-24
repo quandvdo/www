@@ -21,6 +21,10 @@ class CreateActivitiesTable extends Migration
             $table->text('description')->nullable();
             $table->text('highlight')->nullable();
             $table->text('itinerary')->nullable();
+            $table->integer('age')->default(16);
+            $table->integer('duration')->default(1);
+            $table->string('month')->default('Any Months');
+            $table->string('departure_time')->default('Daily at 9:00am');
             $table->string('slug');
             $table->boolean('isActive')->default(true);
             $table->boolean('isInquiry')->default(true);

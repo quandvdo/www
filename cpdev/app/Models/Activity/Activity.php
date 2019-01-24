@@ -18,18 +18,40 @@ class Activity extends Model
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
 
+    public function addon()
+    {
+        return $this->hasMany(Addon::class, 'activity_id', 'id');
+    }
+
     public function activePrice()
     {
-        return $this->price()->where('isActive',true)->orderBy('created_at', 'desc')->first();
+        return $this->price()->where('isActive', true)->orderBy('created_at', 'desc')->first();
+    }
+
+    public function freeAddon()
+    {
+        return $this->addon()
+            ->where('type', '=', '2')
+            ->orderBy('created_at', 'desc')->get();
+    }
+
+    public function upgradeAddon()
+    {
+        return $this->addon()
+            ->where('type', '=', '1')
+            ->orderBy('created_at', 'desc')->get();
     }
 
     public static function findBySlug($slug)
     {
-        return Activity::with('category','price')->where('slug', $slug)->first();
+        return Activity::with('category', 'price', 'addon')
+            ->where('slug', $slug)->first();
     }
 
     public static function findByFeature()
     {
-        return Activity::with('category')->where('isFeature', true)->paginate(15);
+        return Activity::with('category')
+            ->where('isFeature', true)
+            ->paginate(15);
     }
 }
