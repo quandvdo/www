@@ -62,7 +62,7 @@ class SetupSeeder extends Seeder
             'Lam Dong', 'Phu Yen'
         ];
 
-        foreach ($cities as $city){
+        foreach ($cities as $city) {
             \App\Utilities\City::create([
                 'country' => 'VN',
                 'city' => $city,
@@ -77,8 +77,55 @@ class SetupSeeder extends Seeder
         ]);
 
         \App\Models\Utilties\Option::create([
-            'key' => 'phone'
-        ])
+            'type' => 'global',
+            'key' => 'intro',
+            'value' => 'With wide knowledge about our own country and experience about customer service, we are proudly and confidently organized the best travel packages to discover the whole Vietnam. We not only provide you a trip but also follow your each steps to give you the best memory of Viet Nam.<br>
+We can organize private tours or group tours, budget packages or luxury trip all depend on your requirements. ',
+            'icon' => 'fa-google-plus-g'
+        ]);
+
+        \App\Models\Utilties\Option::create([
+            'type' => 'global',
+            'key' => 'phone',
+            'value' => '(+84) 933 450 123',
+            'icon' => 'fa-map-marker-alt'
+        ]);
+
+
+        \App\Models\Utilties\Option::create([
+            'type' => 'global',
+            'key' => 'address',
+            'value' => '25 Yen Ninh, Hoan Kiem, Ha Noi',
+            'icon' => 'fa-phone-square'
+        ]);
+
+        \App\Models\Utilties\Option::create([
+            'type' => 'global',
+            'key' => 'email',
+            'value' => 'hi@compasstravel.vn',
+            'icon' => 'fa-envelope'
+        ]);
+
+        \App\Models\Utilties\Option::create([
+            'type' => 'social',
+            'key' => 'facebook',
+            'value' => 'https://www.facebook.com/compasstravelvietnam/',
+            'icon' => 'fa-facebook-f'
+        ]);
+        \App\Models\Utilties\Option::create([
+            'type' => 'social',
+            'key' => 'twitter',
+            'value' => 'https://twitter.com/compasstravelvietnam/',
+            'icon' => 'fa-twitter'
+        ]);
+        \App\Models\Utilties\Option::create([
+            'type' => 'social',
+            'key' => 'googleplus',
+            'value' => 'https://plus.google.com//compasstravelvietnam/',
+            'icon' => 'fa-google-plus-g'
+        ]);
+
+
 
     }
 }

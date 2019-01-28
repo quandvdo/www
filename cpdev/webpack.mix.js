@@ -11,20 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 /*Frontend*/
-mix.js('resources/js/frontend/app.js', 'public/js/compass.js')
-    .js('resources/js/frontend/plugins/jquery-3.1.1.min.js','public/js/plugins/')
-    .js('resources/js/frontend/plugins/jquery.magnific-popup.min.js','public/js/plugins/')
-    .js('resources/js/frontend/plugins/smooth-scroll.min.js','public/js/plugins/')
-    .js('resources/js/frontend/plugins/instafeed.min.js','public/js/plugins/')
-    .js('resources/js/frontend/plugins/ofi.js','public/js/plugins/')
+mix.js('resources/js/frontend/compass.js', 'public/js/compass.js')
     .sourceMaps();
-mix.sass('resources/sass/frontend/app.scss', 'public/css/compass.css')
-    .options({
-        processCssUrls: false
-    });
-mix.styles('resources/sass/frontend/plugins/animate.css','public/css/plugins/animate.css');
-mix.styles('resources/sass/frontend/plugins/jquery-ui.css','public/css/plugins/jquery-ui.css');
-mix.styles('resources/sass/frontend/plugins/magnific-popup.css','public/css/plugins/magnific-popup.css');
+mix.copyDirectory('resources/js/frontend/plugins', 'public/js/plugins');
+mix.copyDirectory('resources/sass/frontend/plugins', 'public/css/plugins');
+mix.copy('resources/sass/frontend/app.css', 'public/css/compass.css');
+mix.styles('resources/sass/frontend/plugins/animate.css', 'public/css/plugins/animate.css');
+mix.styles('resources/sass/frontend/plugins/jquery-ui.css', 'public/css/plugins/jquery-ui.css');
+mix.styles('resources/sass/frontend/plugins/magnific-popup.css', 'public/css/plugins/magnific-popup.css');
 
 // BrowserSync
 mix.browserSync({
@@ -35,4 +29,9 @@ mix.browserSync({
         './public/js/**/*.js',
         './resources/views/**/*.blade.php'
     ]
+});
+mix.autoload({
+    jQuery: 'jquery',
+    $: 'jquery',
+    jquery: 'jquery'
 });

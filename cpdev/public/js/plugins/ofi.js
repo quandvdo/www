@@ -1,112 +1,234 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
-/******/ })
-/************************************************************************/
-/******/ ({
+/*! npm.im/object-fit-images 3.2.3 */
+var objectFitImages = (function () {
+'use strict';
 
-/***/ "./resources/js/frontend/plugins/ofi.js":
-/*!**********************************************!*\
-  !*** ./resources/js/frontend/plugins/ofi.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+var OFI = 'bfred-it:object-fit-images';
+var propRegex = /(object-fit|object-position)\s*:\s*([-\w\s%]+)/g;
+var testImg = typeof Image === 'undefined' ? {style: {'object-position': 1}} : new Image();
+var supportsObjectFit = 'object-fit' in testImg.style;
+var supportsObjectPosition = 'object-position' in testImg.style;
+var supportsOFI = 'background-size' in testImg.style;
+var supportsCurrentSrc = typeof testImg.currentSrc === 'string';
+var nativeGetAttribute = testImg.getAttribute;
+var nativeSetAttribute = testImg.setAttribute;
+var autoModeEnabled = false;
 
-eval("/*! npm.im/object-fit-images 3.2.3 */\nvar objectFitImages = function () {\n  'use strict';\n\n  var OFI = 'bfred-it:object-fit-images';\n  var propRegex = /(object-fit|object-position)\\s*:\\s*([-\\w\\s%]+)/g;\n  var testImg = typeof Image === 'undefined' ? {\n    style: {\n      'object-position': 1\n    }\n  } : new Image();\n  var supportsObjectFit = 'object-fit' in testImg.style;\n  var supportsObjectPosition = 'object-position' in testImg.style;\n  var supportsOFI = 'background-size' in testImg.style;\n  var supportsCurrentSrc = typeof testImg.currentSrc === 'string';\n  var nativeGetAttribute = testImg.getAttribute;\n  var nativeSetAttribute = testImg.setAttribute;\n  var autoModeEnabled = false;\n\n  function createPlaceholder(w, h) {\n    return \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='\" + w + \"' height='\" + h + \"'%3E%3C/svg%3E\";\n  }\n\n  function polyfillCurrentSrc(el) {\n    if (el.srcset && !supportsCurrentSrc && window.picturefill) {\n      var pf = window.picturefill._; // parse srcset with picturefill where currentSrc isn't available\n\n      if (!el[pf.ns] || !el[pf.ns].evaled) {\n        // force synchronous srcset parsing\n        pf.fillImg(el, {\n          reselect: true\n        });\n      }\n\n      if (!el[pf.ns].curSrc) {\n        // force picturefill to parse srcset\n        el[pf.ns].supported = false;\n        pf.fillImg(el, {\n          reselect: true\n        });\n      } // retrieve parsed currentSrc, if any\n\n\n      el.currentSrc = el[pf.ns].curSrc || el.src;\n    }\n  }\n\n  function getStyle(el) {\n    var style = getComputedStyle(el).fontFamily;\n    var parsed;\n    var props = {};\n\n    while ((parsed = propRegex.exec(style)) !== null) {\n      props[parsed[1]] = parsed[2];\n    }\n\n    return props;\n  }\n\n  function setPlaceholder(img, width, height) {\n    // Default: fill width, no height\n    var placeholder = createPlaceholder(width || 1, height || 0); // Only set placeholder if it's different\n\n    if (nativeGetAttribute.call(img, 'src') !== placeholder) {\n      nativeSetAttribute.call(img, 'src', placeholder);\n    }\n  }\n\n  function onImageReady(img, callback) {\n    // naturalWidth is only available when the image headers are loaded,\n    // this loop will poll it every 100ms.\n    if (img.naturalWidth) {\n      callback(img);\n    } else {\n      setTimeout(onImageReady, 100, img, callback);\n    }\n  }\n\n  function fixOne(el) {\n    var style = getStyle(el);\n    var ofi = el[OFI];\n    style['object-fit'] = style['object-fit'] || 'fill'; // default value\n    // Avoid running where unnecessary, unless OFI had already done its deed\n\n    if (!ofi.img) {\n      // fill is the default behavior so no action is necessary\n      if (style['object-fit'] === 'fill') {\n        return;\n      } // Where object-fit is supported and object-position isn't (Safari < 10)\n\n\n      if (!ofi.skipTest && // unless user wants to apply regardless of browser support\n      supportsObjectFit && // if browser already supports object-fit\n      !style['object-position'] // unless object-position is used\n      ) {\n          return;\n        }\n    } // keep a clone in memory while resetting the original to a blank\n\n\n    if (!ofi.img) {\n      ofi.img = new Image(el.width, el.height);\n      ofi.img.srcset = nativeGetAttribute.call(el, \"data-ofi-srcset\") || el.srcset;\n      ofi.img.src = nativeGetAttribute.call(el, \"data-ofi-src\") || el.src; // preserve for any future cloneNode calls\n      // https://github.com/bfred-it/object-fit-images/issues/53\n\n      nativeSetAttribute.call(el, \"data-ofi-src\", el.src);\n\n      if (el.srcset) {\n        nativeSetAttribute.call(el, \"data-ofi-srcset\", el.srcset);\n      }\n\n      setPlaceholder(el, el.naturalWidth || el.width, el.naturalHeight || el.height); // remove srcset because it overrides src\n\n      if (el.srcset) {\n        el.srcset = '';\n      }\n\n      try {\n        keepSrcUsable(el);\n      } catch (err) {\n        if (window.console) {\n          console.warn('https://bit.ly/ofi-old-browser');\n        }\n      }\n    }\n\n    polyfillCurrentSrc(ofi.img);\n    el.style.backgroundImage = \"url(\\\"\" + (ofi.img.currentSrc || ofi.img.src).replace(/\"/g, '\\\\\"') + \"\\\")\";\n    el.style.backgroundPosition = style['object-position'] || 'center';\n    el.style.backgroundRepeat = 'no-repeat';\n    el.style.backgroundOrigin = 'content-box';\n\n    if (/scale-down/.test(style['object-fit'])) {\n      onImageReady(ofi.img, function () {\n        if (ofi.img.naturalWidth > el.width || ofi.img.naturalHeight > el.height) {\n          el.style.backgroundSize = 'contain';\n        } else {\n          el.style.backgroundSize = 'auto';\n        }\n      });\n    } else {\n      el.style.backgroundSize = style['object-fit'].replace('none', 'auto').replace('fill', '100% 100%');\n    }\n\n    onImageReady(ofi.img, function (img) {\n      setPlaceholder(el, img.naturalWidth, img.naturalHeight);\n    });\n  }\n\n  function keepSrcUsable(el) {\n    var descriptors = {\n      get: function get(prop) {\n        return el[OFI].img[prop ? prop : 'src'];\n      },\n      set: function set(value, prop) {\n        el[OFI].img[prop ? prop : 'src'] = value;\n        nativeSetAttribute.call(el, \"data-ofi-\" + prop, value); // preserve for any future cloneNode\n\n        fixOne(el);\n        return value;\n      }\n    };\n    Object.defineProperty(el, 'src', descriptors);\n    Object.defineProperty(el, 'currentSrc', {\n      get: function get() {\n        return descriptors.get('currentSrc');\n      }\n    });\n    Object.defineProperty(el, 'srcset', {\n      get: function get() {\n        return descriptors.get('srcset');\n      },\n      set: function set(ss) {\n        return descriptors.set(ss, 'srcset');\n      }\n    });\n  }\n\n  function hijackAttributes() {\n    function getOfiImageMaybe(el, name) {\n      return el[OFI] && el[OFI].img && (name === 'src' || name === 'srcset') ? el[OFI].img : el;\n    }\n\n    if (!supportsObjectPosition) {\n      HTMLImageElement.prototype.getAttribute = function (name) {\n        return nativeGetAttribute.call(getOfiImageMaybe(this, name), name);\n      };\n\n      HTMLImageElement.prototype.setAttribute = function (name, value) {\n        return nativeSetAttribute.call(getOfiImageMaybe(this, name), name, String(value));\n      };\n    }\n  }\n\n  function fix(imgs, opts) {\n    var startAutoMode = !autoModeEnabled && !imgs;\n    opts = opts || {};\n    imgs = imgs || 'img';\n\n    if (supportsObjectPosition && !opts.skipTest || !supportsOFI) {\n      return false;\n    } // use imgs as a selector or just select all images\n\n\n    if (imgs === 'img') {\n      imgs = document.getElementsByTagName('img');\n    } else if (typeof imgs === 'string') {\n      imgs = document.querySelectorAll(imgs);\n    } else if (!('length' in imgs)) {\n      imgs = [imgs];\n    } // apply fix to all\n\n\n    for (var i = 0; i < imgs.length; i++) {\n      imgs[i][OFI] = imgs[i][OFI] || {\n        skipTest: opts.skipTest\n      };\n      fixOne(imgs[i]);\n    }\n\n    if (startAutoMode) {\n      document.body.addEventListener('load', function (e) {\n        if (e.target.tagName === 'IMG') {\n          fix(e.target, {\n            skipTest: opts.skipTest\n          });\n        }\n      }, true);\n      autoModeEnabled = true;\n      imgs = 'img'; // reset to a generic selector for watchMQ\n    } // if requested, watch media queries for object-fit change\n\n\n    if (opts.watchMQ) {\n      window.addEventListener('resize', fix.bind(null, imgs, {\n        skipTest: opts.skipTest\n      }));\n    }\n  }\n\n  fix.supportsObjectFit = supportsObjectFit;\n  fix.supportsObjectPosition = supportsObjectPosition;\n  hijackAttributes();\n  return fix;\n}();//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvZnJvbnRlbmQvcGx1Z2lucy9vZmkuanM/MGVhYyJdLCJuYW1lcyI6WyJvYmplY3RGaXRJbWFnZXMiLCJPRkkiLCJwcm9wUmVnZXgiLCJ0ZXN0SW1nIiwiSW1hZ2UiLCJzdHlsZSIsInN1cHBvcnRzT2JqZWN0Rml0Iiwic3VwcG9ydHNPYmplY3RQb3NpdGlvbiIsInN1cHBvcnRzT0ZJIiwic3VwcG9ydHNDdXJyZW50U3JjIiwiY3VycmVudFNyYyIsIm5hdGl2ZUdldEF0dHJpYnV0ZSIsImdldEF0dHJpYnV0ZSIsIm5hdGl2ZVNldEF0dHJpYnV0ZSIsInNldEF0dHJpYnV0ZSIsImF1dG9Nb2RlRW5hYmxlZCIsImNyZWF0ZVBsYWNlaG9sZGVyIiwidyIsImgiLCJwb2x5ZmlsbEN1cnJlbnRTcmMiLCJlbCIsInNyY3NldCIsIndpbmRvdyIsInBpY3R1cmVmaWxsIiwicGYiLCJfIiwibnMiLCJldmFsZWQiLCJmaWxsSW1nIiwicmVzZWxlY3QiLCJjdXJTcmMiLCJzdXBwb3J0ZWQiLCJzcmMiLCJnZXRTdHlsZSIsImdldENvbXB1dGVkU3R5bGUiLCJmb250RmFtaWx5IiwicGFyc2VkIiwicHJvcHMiLCJleGVjIiwic2V0UGxhY2Vob2xkZXIiLCJpbWciLCJ3aWR0aCIsImhlaWdodCIsInBsYWNlaG9sZGVyIiwiY2FsbCIsIm9uSW1hZ2VSZWFkeSIsImNhbGxiYWNrIiwibmF0dXJhbFdpZHRoIiwic2V0VGltZW91dCIsImZpeE9uZSIsIm9maSIsInNraXBUZXN0IiwibmF0dXJhbEhlaWdodCIsImtlZXBTcmNVc2FibGUiLCJlcnIiLCJjb25zb2xlIiwid2FybiIsImJhY2tncm91bmRJbWFnZSIsInJlcGxhY2UiLCJiYWNrZ3JvdW5kUG9zaXRpb24iLCJiYWNrZ3JvdW5kUmVwZWF0IiwiYmFja2dyb3VuZE9yaWdpbiIsInRlc3QiLCJiYWNrZ3JvdW5kU2l6ZSIsImRlc2NyaXB0b3JzIiwiZ2V0IiwicHJvcCIsInNldCIsInZhbHVlIiwiT2JqZWN0IiwiZGVmaW5lUHJvcGVydHkiLCJzcyIsImhpamFja0F0dHJpYnV0ZXMiLCJnZXRPZmlJbWFnZU1heWJlIiwibmFtZSIsIkhUTUxJbWFnZUVsZW1lbnQiLCJwcm90b3R5cGUiLCJTdHJpbmciLCJmaXgiLCJpbWdzIiwib3B0cyIsInN0YXJ0QXV0b01vZGUiLCJkb2N1bWVudCIsImdldEVsZW1lbnRzQnlUYWdOYW1lIiwicXVlcnlTZWxlY3RvckFsbCIsImkiLCJsZW5ndGgiLCJib2R5IiwiYWRkRXZlbnRMaXN0ZW5lciIsImUiLCJ0YXJnZXQiLCJ0YWdOYW1lIiwid2F0Y2hNUSIsImJpbmQiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0EsSUFBSUEsZUFBZSxHQUFJLFlBQVk7QUFDbkM7O0FBRUEsTUFBSUMsR0FBRyxHQUFHLDRCQUFWO0FBQ0EsTUFBSUMsU0FBUyxHQUFHLGlEQUFoQjtBQUNBLE1BQUlDLE9BQU8sR0FBRyxPQUFPQyxLQUFQLEtBQWlCLFdBQWpCLEdBQStCO0FBQUNDLFNBQUssRUFBRTtBQUFDLHlCQUFtQjtBQUFwQjtBQUFSLEdBQS9CLEdBQWlFLElBQUlELEtBQUosRUFBL0U7QUFDQSxNQUFJRSxpQkFBaUIsR0FBRyxnQkFBZ0JILE9BQU8sQ0FBQ0UsS0FBaEQ7QUFDQSxNQUFJRSxzQkFBc0IsR0FBRyxxQkFBcUJKLE9BQU8sQ0FBQ0UsS0FBMUQ7QUFDQSxNQUFJRyxXQUFXLEdBQUcscUJBQXFCTCxPQUFPLENBQUNFLEtBQS9DO0FBQ0EsTUFBSUksa0JBQWtCLEdBQUcsT0FBT04sT0FBTyxDQUFDTyxVQUFmLEtBQThCLFFBQXZEO0FBQ0EsTUFBSUMsa0JBQWtCLEdBQUdSLE9BQU8sQ0FBQ1MsWUFBakM7QUFDQSxNQUFJQyxrQkFBa0IsR0FBR1YsT0FBTyxDQUFDVyxZQUFqQztBQUNBLE1BQUlDLGVBQWUsR0FBRyxLQUF0Qjs7QUFFQSxXQUFTQyxpQkFBVCxDQUEyQkMsQ0FBM0IsRUFBOEJDLENBQTlCLEVBQWlDO0FBQ2hDLFdBQVEseUVBQXlFRCxDQUF6RSxH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b3VyY2VzQ29udGVudCI6WyIvKiEgbnBtLmltL29iamVjdC1maXQtaW1hZ2VzIDMuMi4zICovXG52YXIgb2JqZWN0Rml0SW1hZ2VzID0gKGZ1bmN0aW9uICgpIHtcbid1c2Ugc3RyaWN0JztcblxudmFyIE9GSSA9ICdiZnJlZC1pdDpvYmplY3QtZml0LWltYWdlcyc7XG52YXIgcHJvcFJlZ2V4ID0gLyhvYmplY3QtZml0fG9iamVjdC1wb3NpdGlvbilcXHMqOlxccyooWy1cXHdcXHMlXSspL2c7XG52YXIgdGVzdEltZyA9IHR5cGVvZiBJbWFnZSA9PT0gJ3VuZGVmaW5lZCcgPyB7c3R5bGU6IHsnb2JqZWN0LXBvc2l0aW9uJzogMX19IDogbmV3IEltYWdlKCk7XG52YXIgc3VwcG9ydHNPYmplY3RGaXQgPSAnb2JqZWN0LWZpdCcgaW4gdGVzdEltZy5zdHlsZTtcbnZhciBzdXBwb3J0c09iamVjdFBvc2l0aW9uID0gJ29iamVjdC1wb3NpdGlvbicgaW4gdGVzdEltZy5zdHlsZTtcbnZhciBzdXBwb3J0c09GSSA9ICdiYWNrZ3JvdW5kLXNpemUnIGluIHRlc3RJbWcuc3R5bGU7XG52YXIgc3VwcG9ydHNDdXJyZW50U3JjID0gdHlwZW9mIHRlc3RJbWcuY3VycmVudFNyYyA9PT0gJ3N0cmluZyc7XG52YXIgbmF0aXZlR2V0QXR0cmlidXRlID0gdGVzdEltZy5nZXRBdHRyaWJ1dGU7XG52YXIgbmF0aXZlU2V0QXR0cmlidXRlID0gdGVzdEltZy5zZXRBdHRyaWJ1dGU7XG52YXIgYXV0b01vZGVFbmFibGVkID0gZmFsc2U7XG5cbmZ1bmN0aW9uIGNyZWF0ZVBsYWNlaG9sZGVyKHcsIGgpIHtcblx0cmV0dXJuIChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nXCIgKyB3ICsgXCInIGhlaWdodD0nXCIgKyBoICsgXCInJTNFJTNDL3N2ZyUzRVwiKTtcbn1cblxuZnVuY3Rpb24gcG9seWZpbGxDdXJyZW50U3JjKGVsKSB7XG5cdGlmIChlbC5zcmNzZXQgJiYgIXN1cHBvcnRzQ3VycmVudFNyYyAmJiB3aW5kb3cucGljdHVyZWZpbGwpIHtcblx0XHR2YXIgcGYgPSB3aW5kb3cucGljdHVyZWZpbGwuXztcblx0XHQvLyBwYXJzZSBzcmNzZXQgd2l0aCBwaWN0dXJlZmlsbCB3aGVyZSBjdXJyZW50U3JjIGlzbid0IGF2YWlsYWJsZVxuXHRcdGlmICghZWxbcGYubnNdIHx8ICFlbFtwZi5uc10uZXZhbGVkKSB7XG5cdFx0XHQvLyBmb3JjZSBzeW5jaHJvbm91cyBzcmNzZXQgcGFyc2luZ1xuXHRcdFx0cGYuZmlsbEltZyhlbCwge3Jlc2VsZWN0OiB0cnVlfSk7XG5cdFx0fVxuXG5cdFx0aWYgKCFlbFtwZi5uc10uY3VyU3JjKSB7XG5cdFx0XHQvLyBmb3JjZSBwaWN0dXJlZmlsbCB0byBwYXJzZSBzcmNzZXRcblx0XHRcdGVsW3BmLm5zXS5zdXBwb3J0ZWQgPSBmYWxzZTtcblx0XHRcdHBmLmZpbGxJbWcoZWwsIHtyZXNlbGVjdDogdHJ1ZX0pO1xuXHRcdH1cblxuXHRcdC8vIHJldHJpZXZlIHBhcnNlZCBjdXJyZW50U3JjLCBpZiBhbnlcblx0XHRlbC5jdXJyZW50U3JjID0gZWxbcGYubnNdLmN1clNyYyB8fCBlbC5zcmM7XG5cdH1cbn1cblxuZnVuY3Rpb24gZ2V0U3R5bGUoZWwpIHtcblx0dmFyIHN0eWxlID0gZ2V0Q29tcHV0ZWRTdHlsZShlbCkuZm9udEZhbWlseTtcblx0dmFyIHBhcnNlZDtcblx0dmFyIHByb3BzID0ge307XG5cdHdoaWxlICgocGFyc2VkID0gcHJvcFJlZ2V4LmV4ZWMoc3R5bGUpKSAhPT0gbnVsbCkge1xuXHRcdHByb3BzW3BhcnNlZFsxXV0gPSBwYXJzZWRbMl07XG5cdH1cblx0cmV0dXJuIHByb3BzO1xufVxuXG5mdW5jdGlvbiBzZXRQbGFjZWhvbGRlcihpbWcsIHdpZHRoLCBoZWlnaHQpIHtcblx0Ly8gRGVmYXVsdDogZmlsbCB3aWR0aCwgbm8gaGVpZ2h0XG5cdHZhciBwbGFjZWhvbGRlciA9IGNyZWF0ZVBsYWNlaG9sZGVyKHdpZHRoIHx8IDEsIGhlaWdodCB8fCAwKTtcblxuXHQvLyBPbmx5IHNldCBwbGFjZWhvbGRlciBpZiBpdCdzIGRpZmZlcmVudFxuXHRpZiAobmF0aXZlR2V0QXR0cmlidXRlLmNhbGwoaW1nLCAnc3JjJykgIT09IHBsYWNlaG9sZGVyKSB7XG5cdFx0bmF0aXZlU2V0QXR0cmlidXRlLmNhbGwoaW1nLCAnc3JjJywgcGxhY2Vob2xkZXIpO1xuXHR9XG59XG5cbmZ1bmN0aW9uIG9uSW1hZ2VSZWFkeShpbWcsIGNhbGxiYWNrKSB7XG5cdC8vIG5hdHVyYWxXaWR0aCBpcyBvbmx5IGF2YWlsYWJsZSB3aGVuIHRoZSBpbWFnZSBoZWFkZXJzIGFyZSBsb2FkZWQsXG5cdC8vIHRoaXMgbG9vcCB3aWxsIHBvbGwgaXQgZXZlcnkgMTAwbXMuXG5cdGlmIChpbWcubmF0dXJhbFdpZHRoKSB7XG5cdFx0Y2FsbGJhY2soaW1nKTtcblx0fSBlbHNlIHtcblx0XHRzZXRUaW1lb3V0KG9uSW1hZ2VSZWFkeSwgMTAwLCBpbWcsIGNhbGxiYWNrKTtcblx0fVxufVxuXG5mdW5jdGlvbiBmaXhPbmUoZWwpIHtcblx0dmFyIHN0eWxlID0gZ2V0U3R5bGUoZWwpO1xuXHR2YXIgb2ZpID0gZWxbT0ZJXTtcblx0c3R5bGVbJ29iamVjdC1maXQnXSA9IHN0eWxlWydvYmplY3QtZml0J10gfHwgJ2ZpbGwnOyAvLyBkZWZhdWx0IHZhbHVlXG5cblx0Ly8gQXZvaWQgcnVubmluZyB3aGVyZSB1bm5lY2Vzc2FyeSwgdW5sZXNzIE9GSSBoYWQgYWxyZWFkeSBkb25lIGl0cyBkZWVkXG5cdGlmICghb2ZpLmltZykge1xuXHRcdC8vIGZpbGwgaXMgdGhlIGRlZmF1bHQgYmVoYXZpb3Igc28gbm8gYWN0aW9uIGlzIG5lY2Vzc2FyeVxuXHRcdGlmIChzdHlsZVsnb2JqZWN0LWZpdCddID09PSAnZmlsbCcpIHtcblx0XHRcdHJldHVybjtcblx0XHR9XG5cblx0XHQvLyBXaGVyZSBvYmplY3QtZml0IGlzIHN1cHBvcnRlZCBhbmQgb2JqZWN0LXBvc2l0aW9uIGlzbid0IChTYWZhcmkgPCAxMClcblx0XHRpZiAoXG5cdFx0XHQhb2ZpLnNraXBUZXN0ICYmIC8vIHVubGVzcyB1c2VyIHdhbnRzIHRvIGFwcGx5IHJlZ2FyZGxlc3Mgb2YgYnJvd3NlciBzdXBwb3J0XG5cdFx0XHRzdXBwb3J0c09iamVjdEZpdCAmJiAvLyBpZiBicm93c2VyIGFscmVhZHkgc3VwcG9ydHMgb2JqZWN0LWZpdFxuXHRcdFx0IXN0eWxlWydvYmplY3QtcG9zaXRpb24nXSAvLyB1bmxlc3Mgb2JqZWN0LXBvc2l0aW9uIGlzIHVzZWRcblx0XHQpIHtcblx0XHRcdHJldHVybjtcblx0XHR9XG5cdH1cblxuXHQvLyBrZWVwIGEgY2xvbmUgaW4gbWVtb3J5IHdoaWxlIHJlc2V0dGluZyB0aGUgb3JpZ2luYWwgdG8gYSBibGFua1xuXHRpZiAoIW9maS5pbWcpIHtcblx0XHRvZmkuaW1nID0gbmV3IEltYWdlKGVsLndpZHRoLCBlbC5oZWlnaHQpO1xuXHRcdG9maS5pbWcuc3Jjc2V0ID0gbmF0aXZlR2V0QXR0cmlidXRlLmNhbGwoZWwsIFwiZGF0YS1vZmktc3Jjc2V0XCIpIHx8IGVsLnNyY3NldDtcblx0XHRvZmkuaW1nLnNyYyA9IG5hdGl2ZUdldEF0dHJpYnV0ZS5jYWxsKGVsLCBcImRhdGEtb2ZpLXNyY1wiKSB8fCBlbC5zcmM7XG5cblx0XHQvLyBwcmVzZXJ2ZSBmb3IgYW55IGZ1dHVyZSBjbG9uZU5vZGUgY2FsbHNcblx0XHQvLyBodHRwczovL2dpdGh1Yi5jb20vYmZyZWQtaXQvb2JqZWN0LWZpdC1pbWFnZXMvaXNzdWVzLzUzXG5cdFx0bmF0aXZlU2V0QXR0cmlidXRlLmNhbGwoZWwsIFwiZGF0YS1vZmktc3JjXCIsIGVsLnNyYyk7XG5cdFx0aWYgKGVsLnNyY3NldCkge1xuXHRcdFx0bmF0aXZlU2V0QXR0cmlidXRlLmNhbGwoZWwsIFwiZGF0YS1vZmktc3Jjc2V0XCIsIGVsLnNyY3NldCk7XG5cdFx0fVxuXG5cdFx0c2V0UGxhY2Vob2xkZXIoZWwsIGVsLm5hdHVyYWxXaWR0aCB8fCBlbC53aWR0aCwgZWwubmF0dXJhbEhlaWdodCB8fCBlbC5oZWlnaHQpO1xuXG5cdFx0Ly8gcmVtb3ZlIHNyY3NldCBiZWNhdXNlIGl0IG92ZXJyaWRlcyBzcmNcblx0XHRpZiAoZWwuc3Jjc2V0KSB7XG5cdFx0XHRlbC5zcmNzZXQgPSAnJztcblx0XHR9XG5cdFx0dHJ5IHtcblx0XHRcdGtlZXBTcmNVc2FibGUoZWwpO1xuXHRcdH0gY2F0Y2ggKGVycikge1xuXHRcdFx0aWYgKHdpbmRvdy5jb25zb2xlKSB7XG5cdFx0XHRcdGNvbnNvbGUud2FybignaHR0cHM6Ly9iaXQubHkvb2ZpLW9sZC1icm93c2VyJyk7XG5cdFx0XHR9XG5cdFx0fVxuXHR9XG5cblx0cG9seWZpbGxDdXJyZW50U3JjKG9maS5pbWcpO1xuXG5cdGVsLnN0eWxlLmJhY2tncm91bmRJbWFnZSA9IFwidXJsKFxcXCJcIiArICgob2ZpLmltZy5jdXJyZW50U3JjIHx8IG9maS5pbWcuc3JjKS5yZXBsYWNlKC9cIi9nLCAnXFxcXFwiJykpICsgXCJcXFwiKVwiO1xuXHRlbC5zdHlsZS5iYWNrZ3JvdW5kUG9zaXRpb24gPSBzdHlsZVsnb2JqZWN0LXBvc2l0aW9uJ10gfHwgJ2NlbnRlcic7XG5cdGVsLnN0eWxlLmJhY2tncm91bmRSZXBlYXQgPSAnbm8tcmVwZWF0Jztcblx0ZWwuc3R5bGUuYmFja2dyb3VuZE9yaWdpbiA9ICdjb250ZW50LWJveCc7XG5cblx0aWYgKC9zY2FsZS1kb3duLy50ZXN0KHN0eWxlWydvYmplY3QtZml0J10pKSB7XG5cdFx0b25JbWFnZVJlYWR5KG9maS5pbWcsIGZ1bmN0aW9uICgpIHtcblx0XHRcdGlmIChvZmkuaW1nLm5hdHVyYWxXaWR0aCA+IGVsLndpZHRoIHx8IG9maS5pbWcubmF0dXJhbEhlaWdodCA+IGVsLmhlaWdodCkge1xuXHRcdFx0XHRlbC5zdHlsZS5iYWNrZ3JvdW5kU2l6ZSA9ICdjb250YWluJztcblx0XHRcdH0gZWxzZSB7XG5cdFx0XHRcdGVsLnN0eWxlLmJhY2tncm91bmRTaXplID0gJ2F1dG8nO1xuXHRcdFx0fVxuXHRcdH0pO1xuXHR9IGVsc2Uge1xuXHRcdGVsLnN0eWxlLmJhY2tncm91bmRTaXplID0gc3R5bGVbJ29iamVjdC1maXQnXS5yZXBsYWNlKCdub25lJywgJ2F1dG8nKS5yZXBsYWNlKCdmaWxsJywgJzEwMCUgMTAwJScpO1xuXHR9XG5cblx0b25JbWFnZVJlYWR5KG9maS5pbWcsIGZ1bmN0aW9uIChpbWcpIHtcblx0XHRzZXRQbGFjZWhvbGRlcihlbCwgaW1nLm5hdHVyYWxXaWR0aCwgaW1nLm5hdHVyYWxIZWlnaHQpO1xuXHR9KTtcbn1cblxuZnVuY3Rpb24ga2VlcFNyY1VzYWJsZShlbCkge1xuXHR2YXIgZGVzY3JpcHRvcnMgPSB7XG5cdFx0Z2V0OiBmdW5jdGlvbiBnZXQocHJvcCkge1xuXHRcdFx0cmV0dXJuIGVsW09GSV0uaW1nW3Byb3AgPyBwcm9wIDogJ3NyYyddO1xuXHRcdH0sXG5cdFx0c2V0OiBmdW5jdGlvbiBzZXQodmFsdWUsIHByb3ApIHtcblx0XHRcdGVsW09GSV0uaW1nW3Byb3AgPyBwcm9wIDogJ3NyYyddID0gdmFsdWU7XG5cdFx0XHRuYXRpdmVTZXRBdHRyaWJ1dGUuY2FsbChlbCwgKFwiZGF0YS1vZmktXCIgKyBwcm9wKSwgdmFsdWUpOyAvLyBwcmVzZXJ2ZSBmb3IgYW55IGZ1dHVyZSBjbG9uZU5vZGVcblx0XHRcdGZpeE9uZShlbCk7XG5cdFx0XHRyZXR1cm4gdmFsdWU7XG5cdFx0fVxuXHR9O1xuXHRPYmplY3QuZGVmaW5lUHJvcGVydHkoZWwsICdzcmMnLCBkZXNjcmlwdG9ycyk7XG5cdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShlbCwgJ2N1cnJlbnRTcmMnLCB7XG5cdFx0Z2V0OiBmdW5jdGlvbiAoKSB7IHJldHVybiBkZXNjcmlwdG9ycy5nZXQoJ2N1cnJlbnRTcmMnKTsgfVxuXHR9KTtcblx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGVsLCAnc3Jjc2V0Jywge1xuXHRcdGdldDogZnVuY3Rpb24gKCkgeyByZXR1cm4gZGVzY3JpcHRvcnMuZ2V0KCdzcmNzZXQnKTsgfSxcblx0XHRzZXQ6IGZ1bmN0aW9uIChzcykgeyByZXR1cm4gZGVzY3JpcHRvcnMuc2V0KHNzLCAnc3Jjc2V0Jyk7IH1cblx0fSk7XG59XG5cbmZ1bmN0aW9uIGhpamFja0F0dHJpYnV0ZXMoKSB7XG5cdGZ1bmN0aW9uIGdldE9maUltYWdlTWF5YmUoZWwsIG5hbWUpIHtcblx0XHRyZXR1cm4gZWxbT0ZJXSAmJiBlbFtPRkldLmltZyAmJiAobmFtZSA9PT0gJ3NyYycgfHwgbmFtZSA9PT0gJ3NyY3NldCcpID8gZWxbT0ZJXS5pbWcgOiBlbDtcblx0fVxuXHRpZiAoIXN1cHBvcnRzT2JqZWN0UG9zaXRpb24pIHtcblx0XHRIVE1MSW1hZ2VFbGVtZW50LnByb3RvdHlwZS5nZXRBdHRyaWJ1dGUgPSBmdW5jdGlvbiAobmFtZSkge1xuXHRcdFx0cmV0dXJuIG5hdGl2ZUdldEF0dHJpYnV0ZS5jYWxsKGdldE9maUltYWdlTWF5YmUodGhpcywgbmFtZSksIG5hbWUpO1xuXHRcdH07XG5cblx0XHRIVE1MSW1hZ2VFbGVtZW50LnByb3RvdHlwZS5zZXRBdHRyaWJ1dGUgPSBmdW5jdGlvbiAobmFtZSwgdmFsdWUpIHtcblx0XHRcdHJldHVybiBuYXRpdmVTZXRBdHRyaWJ1dGUuY2FsbChnZXRPZmlJbWFnZU1heWJlKHRoaXMsIG5hbWUpLCBuYW1lLCBTdHJpbmcodmFsdWUpKTtcblx0XHR9O1xuXHR9XG59XG5cbmZ1bmN0aW9uIGZpeChpbWdzLCBvcHRzKSB7XG5cdHZhciBzdGFydEF1dG9Nb2RlID0gIWF1dG9Nb2RlRW5hYmxlZCAmJiAhaW1ncztcblx0b3B0cyA9IG9wdHMgfHwge307XG5cdGltZ3MgPSBpbWdzIHx8ICdpbWcnO1xuXG5cdGlmICgoc3VwcG9ydHNPYmplY3RQb3NpdGlvbiAmJiAhb3B0cy5za2lwVGVzdCkgfHwgIXN1cHBvcnRzT0ZJKSB7XG5cdFx0cmV0dXJuIGZhbHNlO1xuXHR9XG5cblx0Ly8gdXNlIGltZ3MgYXMgYSBzZWxlY3RvciBvciBqdXN0IHNlbGVjdCBhbGwgaW1hZ2VzXG5cdGlmIChpbWdzID09PSAnaW1nJykge1xuXHRcdGltZ3MgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnaW1nJyk7XG5cdH0gZWxzZSBpZiAodHlwZW9mIGltZ3MgPT09ICdzdHJpbmcnKSB7XG5cdFx0aW1ncyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoaW1ncyk7XG5cdH0gZWxzZSBpZiAoISgnbGVuZ3RoJyBpbiBpbWdzKSkge1xuXHRcdGltZ3MgPSBbaW1nc107XG5cdH1cblxuXHQvLyBhcHBseSBmaXggdG8gYWxsXG5cdGZvciAodmFyIGkgPSAwOyBpIDwgaW1ncy5sZW5ndGg7IGkrKykge1xuXHRcdGltZ3NbaV1bT0ZJXSA9IGltZ3NbaV1bT0ZJXSB8fCB7XG5cdFx0XHRza2lwVGVzdDogb3B0cy5za2lwVGVzdFxuXHRcdH07XG5cdFx0Zml4T25lKGltZ3NbaV0pO1xuXHR9XG5cblx0aWYgKHN0YXJ0QXV0b01vZGUpIHtcblx0XHRkb2N1bWVudC5ib2R5LmFkZEV2ZW50TGlzdGVuZXIoJ2xvYWQnLCBmdW5jdGlvbiAoZSkge1xuXHRcdFx0aWYgKGUudGFyZ2V0LnRhZ05hbWUgPT09ICdJTUcnKSB7XG5cdFx0XHRcdGZpeChlLnRhcmdldCwge1xuXHRcdFx0XHRcdHNraXBUZXN0OiBvcHRzLnNraXBUZXN0XG5cdFx0XHRcdH0pO1xuXHRcdFx0fVxuXHRcdH0sIHRydWUpO1xuXHRcdGF1dG9Nb2RlRW5hYmxlZCA9IHRydWU7XG5cdFx0aW1ncyA9ICdpbWcnOyAvLyByZXNldCB0byBhIGdlbmVyaWMgc2VsZWN0b3IgZm9yIHdhdGNoTVFcblx0fVxuXG5cdC8vIGlmIHJlcXVlc3RlZCwgd2F0Y2ggbWVkaWEgcXVlcmllcyBmb3Igb2JqZWN0LWZpdCBjaGFuZ2Vcblx0aWYgKG9wdHMud2F0Y2hNUSkge1xuXHRcdHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdyZXNpemUnLCBmaXguYmluZChudWxsLCBpbWdzLCB7XG5cdFx0XHRza2lwVGVzdDogb3B0cy5za2lwVGVzdFxuXHRcdH0pKTtcblx0fVxufVxuXG5maXguc3VwcG9ydHNPYmplY3RGaXQgPSBzdXBwb3J0c09iamVjdEZpdDtcbmZpeC5zdXBwb3J0c09iamVjdFBvc2l0aW9uID0gc3VwcG9ydHNPYmplY3RQb3NpdGlvbjtcblxuaGlqYWNrQXR0cmlidXRlcygpO1xuXG5yZXR1cm4gZml4O1xuXG59KCkpO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/frontend/plugins/ofi.js\n");
+function createPlaceholder(w, h) {
+	return ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='" + w + "' height='" + h + "'%3E%3C/svg%3E");
+}
 
-/***/ }),
+function polyfillCurrentSrc(el) {
+	if (el.srcset && !supportsCurrentSrc && window.picturefill) {
+		var pf = window.picturefill._;
+		// parse srcset with picturefill where currentSrc isn't available
+		if (!el[pf.ns] || !el[pf.ns].evaled) {
+			// force synchronous srcset parsing
+			pf.fillImg(el, {reselect: true});
+		}
 
-/***/ 5:
-/*!****************************************************!*\
-  !*** multi ./resources/js/frontend/plugins/ofi.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+		if (!el[pf.ns].curSrc) {
+			// force picturefill to parse srcset
+			el[pf.ns].supported = false;
+			pf.fillImg(el, {reselect: true});
+		}
 
-module.exports = __webpack_require__(/*! D:\Code\Compass\cpdev\resources\js\frontend\plugins\ofi.js */"./resources/js/frontend/plugins/ofi.js");
+		// retrieve parsed currentSrc, if any
+		el.currentSrc = el[pf.ns].curSrc || el.src;
+	}
+}
 
+function getStyle(el) {
+	var style = getComputedStyle(el).fontFamily;
+	var parsed;
+	var props = {};
+	while ((parsed = propRegex.exec(style)) !== null) {
+		props[parsed[1]] = parsed[2];
+	}
+	return props;
+}
 
-/***/ })
+function setPlaceholder(img, width, height) {
+	// Default: fill width, no height
+	var placeholder = createPlaceholder(width || 1, height || 0);
 
-/******/ });
+	// Only set placeholder if it's different
+	if (nativeGetAttribute.call(img, 'src') !== placeholder) {
+		nativeSetAttribute.call(img, 'src', placeholder);
+	}
+}
+
+function onImageReady(img, callback) {
+	// naturalWidth is only available when the image headers are loaded,
+	// this loop will poll it every 100ms.
+	if (img.naturalWidth) {
+		callback(img);
+	} else {
+		setTimeout(onImageReady, 100, img, callback);
+	}
+}
+
+function fixOne(el) {
+	var style = getStyle(el);
+	var ofi = el[OFI];
+	style['object-fit'] = style['object-fit'] || 'fill'; // default value
+
+	// Avoid running where unnecessary, unless OFI had already done its deed
+	if (!ofi.img) {
+		// fill is the default behavior so no action is necessary
+		if (style['object-fit'] === 'fill') {
+			return;
+		}
+
+		// Where object-fit is supported and object-position isn't (Safari < 10)
+		if (
+			!ofi.skipTest && // unless user wants to apply regardless of browser support
+			supportsObjectFit && // if browser already supports object-fit
+			!style['object-position'] // unless object-position is used
+		) {
+			return;
+		}
+	}
+
+	// keep a clone in memory while resetting the original to a blank
+	if (!ofi.img) {
+		ofi.img = new Image(el.width, el.height);
+		ofi.img.srcset = nativeGetAttribute.call(el, "data-ofi-srcset") || el.srcset;
+		ofi.img.src = nativeGetAttribute.call(el, "data-ofi-src") || el.src;
+
+		// preserve for any future cloneNode calls
+		// https://github.com/bfred-it/object-fit-images/issues/53
+		nativeSetAttribute.call(el, "data-ofi-src", el.src);
+		if (el.srcset) {
+			nativeSetAttribute.call(el, "data-ofi-srcset", el.srcset);
+		}
+
+		setPlaceholder(el, el.naturalWidth || el.width, el.naturalHeight || el.height);
+
+		// remove srcset because it overrides src
+		if (el.srcset) {
+			el.srcset = '';
+		}
+		try {
+			keepSrcUsable(el);
+		} catch (err) {
+			if (window.console) {
+				console.warn('https://bit.ly/ofi-old-browser');
+			}
+		}
+	}
+
+	polyfillCurrentSrc(ofi.img);
+
+	el.style.backgroundImage = "url(\"" + ((ofi.img.currentSrc || ofi.img.src).replace(/"/g, '\\"')) + "\")";
+	el.style.backgroundPosition = style['object-position'] || 'center';
+	el.style.backgroundRepeat = 'no-repeat';
+	el.style.backgroundOrigin = 'content-box';
+
+	if (/scale-down/.test(style['object-fit'])) {
+		onImageReady(ofi.img, function () {
+			if (ofi.img.naturalWidth > el.width || ofi.img.naturalHeight > el.height) {
+				el.style.backgroundSize = 'contain';
+			} else {
+				el.style.backgroundSize = 'auto';
+			}
+		});
+	} else {
+		el.style.backgroundSize = style['object-fit'].replace('none', 'auto').replace('fill', '100% 100%');
+	}
+
+	onImageReady(ofi.img, function (img) {
+		setPlaceholder(el, img.naturalWidth, img.naturalHeight);
+	});
+}
+
+function keepSrcUsable(el) {
+	var descriptors = {
+		get: function get(prop) {
+			return el[OFI].img[prop ? prop : 'src'];
+		},
+		set: function set(value, prop) {
+			el[OFI].img[prop ? prop : 'src'] = value;
+			nativeSetAttribute.call(el, ("data-ofi-" + prop), value); // preserve for any future cloneNode
+			fixOne(el);
+			return value;
+		}
+	};
+	Object.defineProperty(el, 'src', descriptors);
+	Object.defineProperty(el, 'currentSrc', {
+		get: function () { return descriptors.get('currentSrc'); }
+	});
+	Object.defineProperty(el, 'srcset', {
+		get: function () { return descriptors.get('srcset'); },
+		set: function (ss) { return descriptors.set(ss, 'srcset'); }
+	});
+}
+
+function hijackAttributes() {
+	function getOfiImageMaybe(el, name) {
+		return el[OFI] && el[OFI].img && (name === 'src' || name === 'srcset') ? el[OFI].img : el;
+	}
+	if (!supportsObjectPosition) {
+		HTMLImageElement.prototype.getAttribute = function (name) {
+			return nativeGetAttribute.call(getOfiImageMaybe(this, name), name);
+		};
+
+		HTMLImageElement.prototype.setAttribute = function (name, value) {
+			return nativeSetAttribute.call(getOfiImageMaybe(this, name), name, String(value));
+		};
+	}
+}
+
+function fix(imgs, opts) {
+	var startAutoMode = !autoModeEnabled && !imgs;
+	opts = opts || {};
+	imgs = imgs || 'img';
+
+	if ((supportsObjectPosition && !opts.skipTest) || !supportsOFI) {
+		return false;
+	}
+
+	// use imgs as a selector or just select all images
+	if (imgs === 'img') {
+		imgs = document.getElementsByTagName('img');
+	} else if (typeof imgs === 'string') {
+		imgs = document.querySelectorAll(imgs);
+	} else if (!('length' in imgs)) {
+		imgs = [imgs];
+	}
+
+	// apply fix to all
+	for (var i = 0; i < imgs.length; i++) {
+		imgs[i][OFI] = imgs[i][OFI] || {
+			skipTest: opts.skipTest
+		};
+		fixOne(imgs[i]);
+	}
+
+	if (startAutoMode) {
+		document.body.addEventListener('load', function (e) {
+			if (e.target.tagName === 'IMG') {
+				fix(e.target, {
+					skipTest: opts.skipTest
+				});
+			}
+		}, true);
+		autoModeEnabled = true;
+		imgs = 'img'; // reset to a generic selector for watchMQ
+	}
+
+	// if requested, watch media queries for object-fit change
+	if (opts.watchMQ) {
+		window.addEventListener('resize', fix.bind(null, imgs, {
+			skipTest: opts.skipTest
+		}));
+	}
+}
+
+fix.supportsObjectFit = supportsObjectFit;
+fix.supportsObjectPosition = supportsObjectPosition;
+
+hijackAttributes();
+
+return fix;
+
+}());

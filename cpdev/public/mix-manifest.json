@@ -1,11 +1,6 @@
 {
     "/js/compass.js": "/js/compass.js",
     "/css/compass.css": "/css/compass.css",
-    "/js/plugins/instafeed.min.js": "/js/plugins/instafeed.min.js",
-    "/js/plugins/jquery-3.1.1.min.js": "/js/plugins/jquery-3.1.1.min.js",
-    "/js/plugins/jquery.magnific-popup.min.js": "/js/plugins/jquery.magnific-popup.min.js",
-    "/js/plugins/ofi.js": "/js/plugins/ofi.js",
-    "/js/plugins/smooth-scroll.min.js": "/js/plugins/smooth-scroll.min.js",
     "/css/plugins/animate.css": "/css/plugins/animate.css",
     "/css/plugins/jquery-ui.css": "/css/plugins/jquery-ui.css",
     "/css/plugins/magnific-popup.css": "/css/plugins/magnific-popup.css"

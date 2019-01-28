@@ -10,23 +10,31 @@
 
     <title>{{config('app.name', 'CompassTravel')}}</title>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <script src="{{asset('js/plugins/smooth-scroll.min.js')}}"></script>
-    <script src="{{asset('js/plugins/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('js/plugins/ofi.js')}}"></script>
-    <script src="{{ asset('js/compass.js') }}" defer></script>
-    @stack('js')
-
     {{--CSS--}}
+    <link rel="stylesheet" href="{{asset('/css/plugins/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('/css/plugins/font-awesome-animation.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/plugins/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('/css/plugins/animate.css')}}">
     <link rel="stylesheet" href="{{asset('/css/plugins/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('/css/compass.css')}}">
     @stack('css')
+
+<!-- Bootstrap and Jquery scripts -->
+    <script src="{{asset('js/plugins/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{asset('js/plugins/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/plugins/popper.min.js')}}"></script>
+
+    <!-- Aditional scripts -->
+    <script src="{{asset('js/plugins/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('js/plugins/smooth-scroll.min.js')}}"></script>
+    <script src="{{asset('js/plugins/instafeed.min.js')}}"></script>
+    <script src="{{asset('js/plugins/ofi.js')}}"></script>
+
+    <!-- Main scripts -->
+    <script src="{{asset('js/compass.js')}}"></script>
+    @stack('js')
 </head>
 <body>
 @include('frontend.components.navbar')

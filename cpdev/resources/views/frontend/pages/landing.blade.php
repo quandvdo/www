@@ -62,16 +62,16 @@
                 </div>
             </div>
         </div>
-
         <div class="container destination-section">
             <div class="row">
+
                 @foreach($cities as $city)
                     <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-lg-0 my-4 complete-image">
-                        <a class="" href="#" target="_blank">
+                        <a class="" href="{{route('destination.detail',['slug' => \App\Models\Utilities\Helper::slug($city->location)])}}" target="_blank">
                             <div class="destination-item">
                                 <img src="https://picsum.photos/300/450?image={{rand(1,1000)}}"
                                      class="img-fluid destination-item" alt="image">
-                                <h6 class="white front">{{$city->city}}</h6>
+                                <h6 class="white front">{{$city->location}}</h6>
                             </div>
                         </a>
                     </div>
@@ -203,47 +203,31 @@
                     <h3 class="text-center  mb-4 black"><strong>Tour Experts</strong></h3>
                     <img class="svgcenter quotesicon" src="{{asset('svg/quotes.svg')}}" alt="image">
 
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
 
                         <div class="carousel-inner mt-0">
-                            <div class="carousel-item text-center active">
-                                <h5 class="m-0 pt-3 px-4  black">We have been in the market long enough to see the tour
-                                    industry change, We are convinced this is a company that have been up to the
-                                    standards</h5>
-                                <h6 class="mt-4 mb-0"><strong class="primary-color">Paul Mitchel</strong></h6>
-                                <p class=" m-0 subheading black">Turbino CEO</p>
+                            @foreach($testimonials as $test)
+                            <div class="carousel-item text-center {{$loop->first ? 'active' : ''}}">
+                                <h5 class="m-0 pt-3 px-4 black">{{$test->msg}}</h5>
+                                <h6 class="mt-4 mb-0"><strong class="primary-color">{{$test->name}}</strong></h6>
+                                <p class=" m-0 subheading black">{{$test->subheading}}</p>
                             </div>
-                            <div class="carousel-item text-center">
-                                <h5 class="m-0 pt-3 black">We're delighted that many come back to travel on our escorted
-                                    historical tours and small group cruises again and again. </h5>
-                                <h6 class="mt-4 mb-0"><strong class="primary-color">Ryan Sherlock </strong></h6>
-                                <p class=" m-0 subheading black">Turbino Travel Agent</p>
-                            </div>
-                            <div class="carousel-item text-center">
-                                <h5 class="m-0 pt-3 black">All in all, it was the trip of my dreams and I would happily
-                                    use
-                                    your services again in the future! I loved every minute of our trip and can't wait
-                                    to
-                                    plan another in the future. Please extend my thanks to Yolande as well.
-                                </h5>
-                                <h6 class="mt-4 mb-0"><strong class="primary-color">Monica</strong></h6>
-                                <p class=" m-0 subheading black">Client</p>
-                            </div>
+                            @endforeach
                         </div>
-                        <a class="carousel-control-prev " href="#carouselExampleIndicators" role="button"
+                        <a class="carousel-control-prev " href="#testimonialCarousel" role="button"
                            data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only ">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                        <a class="carousel-control-next" href="#testimonialCarousel" role="button"
                            data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
                         <ol class="carousel-indicators mt-5">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="action-color"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="action-color"></li>
+                            @foreach($testimonials as $test)
+                            <li data-target="#testimonialCarousel" data-slide-to="{{$loop->index}}" class="{{$loop->first ? 'active' : 'action-color'}}"></li>
+                            @endforeach
                         </ol>
                     </div>
                 </div>

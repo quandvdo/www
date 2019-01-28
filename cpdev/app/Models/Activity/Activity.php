@@ -52,6 +52,6 @@ class Activity extends Model
     {
         return Activity::with('category')
             ->where('isFeature', true)
-            ->paginate(15);
+            ->paginate(9);
     }
 }

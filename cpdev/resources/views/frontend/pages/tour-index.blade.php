@@ -137,7 +137,7 @@
                     @foreach($tours->chunk(4) as $item)
                         <div class="col-xs-12 col-md-6 col-lg-4">
                             @foreach($item as $tour)
-                                <a class="card-full" href="tours/{{$tour->slug}}">
+                                <a class="card-full" href="{{$tour->slug}}">
                                     <div class="card-image-holder mb-4">
                                         <img class="w-100 h-100"
                                              src="https://picsum.photos/550/367?image={{rand(800,900)}}"

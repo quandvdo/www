@@ -4,20 +4,25 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Activity\Activity;
 use App\Models\Blog\Blog;
+use App\Models\Utilities\Testimonials;
+use App\Models\Utilties\Option;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
     public function landing()
     {
-        $cities = Activity::all();
+        $city = Activity::select('location')->inRandomOrder()->distinct()->take(8)->get();
         $activity = Activity::findByFeature();
+        $testimonial = Testimonials::take(5)->inRandomOrder()->get();
         return view('frontend.pages.landing')
-            ->with(['cities' => $cities,
-                    'activities' => $activity,
-                    'blogs' => $activity,
-                    ]);
+            ->with(['cities' => $city,
+                'activities' => $activity,
+                'blogs' => $activity,
+                'testimonials' => $testimonial
+            ]);
     }
 
     public function about()
@@ -34,6 +39,7 @@ class MainController extends Controller
     {
         return view('frontend.pages.contactus');
     }
+
     public function contactPost()
     {
         return view('frontend.pages.contactus');
@@ -42,7 +48,7 @@ class MainController extends Controller
     public function tourIndex()
     {
         $tours = Activity::paginate(8);
-        return view('frontend.pages.tour-index')->with('tours',$tours);
+        return view('frontend.pages.tour-index')->with('tours', $tours);
     }
 
     public function tourDetail($slug)

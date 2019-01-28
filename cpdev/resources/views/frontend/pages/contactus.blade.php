@@ -113,27 +113,38 @@
                     <h3 class="black bold front mb-2 mt-2 ">Feel free to<br> connect with us</h3>
                     <h5 class="primary-color section-title mb-3">Open Hours: 08:00 AM - 23.00 PM</h5>
                     <div class="separator"></div>
-                    <p class=" text-block">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula
-                        eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                        Nulla consequat massa quis enim. Donec pede justo ..</p>
-                    <p></p>
+                    @foreach($options as $option)
+                        @if($option->type == 'global')
+                            @if($option->key == 'intro')
+                                <p class=" text-block">{!! $option->value !!}</p>
+                            @endif
+                        @endif
+                    @endforeach
+                    <p>
+                    <ul class="list-unstyled quick-links">
+                        @foreach($options as $option)
+                            @if($option->type == 'global')
+                                @if($option->key == 'intro')
+                                @else
+                                    <li><h5><i class="fas {{$option->icon}} mr-2"></i>{{$option->value}}</h5></li>
+                                @endif
+                            @endif
+                        @endforeach
+                    </ul>
+                    </p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center  col-10 offset-1 mt-5">
                     <div class="text-center white-popup">
-
-                        <a href="https://www.facebook.com/">
-                            <i class="fab fa-facebook-f"></i></a> &nbsp;
-
-                        <a href="https://twitter.com">
-                            <i class="fab fa-twitter"></i></a>&nbsp;
-
-                        <a href="https://plus.google.com/">
-                            <i class="fab fa-google-plus-g"></i>
-                        </a>
+                        @foreach($options as $item)
+                            @if($item->type == 'social')
+                                <li class="list-inline-item">
+                                    <a href="{{$item->value}}"><i class="fab {{$item->icon}}"></i></a>
+                                </li>
+                            @endif
+                        @endforeach
 
                     </div>
                 </div>
