@@ -48,10 +48,22 @@ class Activity extends Model
             ->where('slug', $slug)->first();
     }
 
-    public static function findByFeature()
+    public static function findByFeature($type)
     {
-        return Activity::with('category')
-            ->where('isFeature', true)
-            ->paginate(9);
+        switch($type) {
+            case 'package':
+                $data = Activity::with('category')
+                    ->where('isFeature', true)
+                    ->where('isPackage', false)
+                    ->paginate(6);
+                break;
+            case 'tour':
+                $data = Activity::with('category')
+                    ->where('isPackage', true)
+                    ->where('isFeature', true)
+                    ->paginate(6);
+                break;
+        }
+        return $data;
     }
 }

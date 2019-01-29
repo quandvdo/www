@@ -58,7 +58,8 @@
                 </div>
 
                 <div class="col-sm-3 front my-auto">
-                    <a class="btn btn-primary mt-2 px-5 py-2" href="{{route('destination.index')}}" role="button">more destinations</a>
+                    <a class="btn btn-primary mt-2 px-5 py-2" href="{{route('destination.index')}}" role="button">more
+                        destinations</a>
                 </div>
             </div>
         </div>
@@ -67,7 +68,9 @@
 
                 @foreach($cities as $city)
                     <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-lg-0 my-4 complete-image">
-                        <a class="" href="{{route('destination.detail',['slug' => \App\Models\Utilities\Helper::slug($city->location)])}}" target="_blank">
+                        <a class=""
+                           href="{{route('destination.detail',['slug' => \App\Models\Utilities\Helper::slug($city->location)])}}"
+                           target="_blank">
                             <div class="destination-item">
                                 <img src="https://picsum.photos/300/450?image={{rand(1,1000)}}"
                                      class="img-fluid destination-item" alt="image">
@@ -97,7 +100,8 @@
                     <h5 class="primary-color section-title ">Best &amp; More Popular Tours</h5>
                 </div>
                 <div class="col-sm-3 front my-auto">
-                    <a class="btn btn-primary   mt-2 px-5 py-2" href="{{route('tour.index')}}" role="button">more tours</a>
+                    <a class="btn btn-primary   mt-2 px-5 py-2" href="{{route('tour.index')}}" role="button">more
+                        tours</a>
                 </div>
             </div>
         </div>
@@ -105,35 +109,100 @@
         <div class="content tours-homepage">
             <div class="container">
                 <div class="row">
-                    @foreach($activities as  $key=>$activity)
+                    @foreach($tours as  $key=>$tour)
                         <div
                                 class="col-xs-12 col-md-6 col-lg-4 {{ $loop->last ? 'my-4 mx-auto' : 'mb-lg-0 mb-4 my-4'}}">
                             <div class="card">
                                 <small class="white front"><span
                                             class="far fa-clock mr-2 white"></span><strong>{{rand(1,15)}}</strong><br>days
                                 </small>
-                                <a class="img-card" href="/tours/{{$activity->slug}}">
+                                <a class="img-card" href="{{route('tour.detail', ['slug' => $tour->slug])}}">
                                     <img src="https://picsum.photos/360/200?image={{rand(1,1000)}}" alt="image"/>
                                 </a>
                                 <div class="card-content">
                                     @if(rand(0,1) === 1)
-                                        <div class="special-offer ">
+                                        <div class="special-offer">
                                             <div class="arrow_box text-center">
                                                 <span class="white subtitle bold"> {{rand(10,40)}}% OFF</span>
                                             </div>
                                         </div>
                                     @endif
                                     <div>
-                                        <a class="btn btn-primary px-3 btn-sm float-left" href="#"
-                                           role="button">{{$activity->category->name}}</a>
+                                        <a class="btn btn-primary px-3 btn-sm float-left"
+                                           href="{{route('category.detail', ['slug' => $tour->category->name])}}"
+                                           role="button">{{$tour->category->name}}</a>
                                     </div>
                                     <h6 class="primary-color text-right">
-                                        ${{number_format($activity->activePrice()->price,2)}}</h6>
-                                    <h6 class="black"><a href="/tours/{{$activity->slug}}"
-                                                         target="_blank">{{$activity->name}}</a></h6>
-                                    <p class="">
-                                        {{$activity->description}}<a href="/tours/{{$activity->slug}}"
-                                                                     target="_blank"><span>... See more</span></a>
+                                        ${{number_format($tour->activePrice()->price,2)}}</h6>
+                                    <h6 class="black">
+                                        <a href="/tours/{{$tour->slug}}" target="_blank">{{$tour->title}}</a>
+                                    </h6>
+                                    <p>
+                                        {{$tour->description}}
+                                    </p>
+                                    <p>
+                                        <a href="{{route('tour.detail', ['slug' => $tour->slug])}}"
+                                           target="_blank" class="btn btn-link">See more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <div class="chapter2">
+            <img class="curve2" src="{{asset('svg/curvegrey.svg')}}" alt="image">
+        </div>
+    </section>
+    <!-- End section 3 Tours-->
+
+    <section id="section4">
+        <div class="container">
+            <h2 class="black front">Our Packages</h2>
+            <div class="row mb-5">
+                <div class="col-sm-9 front">
+                    <div class="separator "></div>
+                    <h5 class="primary-color section-title ">Best &amp; More Popular Unique Packages</h5>
+                </div>
+                <div class="col-sm-3 front my-auto">
+                    <a class="btn btn-primary mt-2 px-5 py-2" href="{{route('tour.index')}}" role="button">more
+                        Packages</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content tours-homepage">
+            <div class="container">
+                <div class="row">
+                    @foreach($packages as  $key=>$package)
+                        <div
+                                class="col-xs-12 col-md-6 col-lg-4 {{ $loop->last ? 'my-4 mx-auto' : 'mb-lg-0 mb-4 my-4'}}">
+                            <div class="card">
+                                <small class="white front">
+                                    <span class="far fa-clock mr-2 white"></span>
+                                    <strong>{{$package->duration}}</strong>
+                                    <br>days
+                                </small>
+                                <a class="img-card" href="{{route('packages.detail', ['slug' => $package->slug])}}">
+                                    <img src="https://picsum.photos/360/200?image={{rand(1,1000)}}" alt="image"/>
+                                </a>
+                                <div class="card-content">
+                                    <div>
+                                        <a class="btn btn-primary px-3 btn-sm float-left"
+                                           href="{{route('category.detail', ['slug' => $package->category->name])}}"
+                                           role="button">{{$package->category->name}}</a>
+                                    </div>
+                                    <h6 class="primary-color text-right">
+                                        ${{number_format($package->activePrice()->price,2)}}</h6>
+                                    <h6 class="black"><a href="{{route('packages.detail', ['slug' => $package->slug])}}"
+                                                         target="_blank">{{$package->title}}</a></h6>
+                                    <p>
+                                        {{$package->description}}
+                                    </p>
+                                    <p>
+                                        <a href="{{route('packages.detail', ['slug' => $package->slug])}}"
+                                           target="_blank" class="btn btn-link">See more</a>
                                     </p>
                                 </div>
                             </div>
@@ -144,9 +213,9 @@
         </div>
 
     </section>
-    <!-- End section 3 tours-->
+    <!-- End section 3 Packages-->
 
-    <section id="section4">
+    <section id="section5">
         <img class="curve3" src="{{asset('svg/curve2.svg')}}" alt="iamge">
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -196,7 +265,7 @@
         </div>
     </section>
     <!-- End section 3 tours-->
-    <section id="section5">
+    <section id="section4">
         <div class="container testimonials">
             <div class="row">
                 <div class="col-md-8 offset-md-2 col-10 offset-1">
@@ -207,11 +276,11 @@
 
                         <div class="carousel-inner mt-0">
                             @foreach($testimonials as $test)
-                            <div class="carousel-item text-center {{$loop->first ? 'active' : ''}}">
-                                <h5 class="m-0 pt-3 px-4 black">{{$test->msg}}</h5>
-                                <h6 class="mt-4 mb-0"><strong class="primary-color">{{$test->name}}</strong></h6>
-                                <p class=" m-0 subheading black">{{$test->subheading}}</p>
-                            </div>
+                                <div class="carousel-item text-center {{$loop->first ? 'active' : ''}}">
+                                    <h5 class="m-0 pt-3 px-4 black">{{$test->msg}}</h5>
+                                    <h6 class="mt-4 mb-0"><strong class="primary-color">{{$test->name}}</strong></h6>
+                                    <p class=" m-0 subheading black">{{$test->subheading}}</p>
+                                </div>
                             @endforeach
                         </div>
                         <a class="carousel-control-prev " href="#testimonialCarousel" role="button"
@@ -226,7 +295,8 @@
                         </a>
                         <ol class="carousel-indicators mt-5">
                             @foreach($testimonials as $test)
-                            <li data-target="#testimonialCarousel" data-slide-to="{{$loop->index}}" class="{{$loop->first ? 'active' : 'action-color'}}"></li>
+                                <li data-target="#testimonialCarousel" data-slide-to="{{$loop->index}}"
+                                    class="{{$loop->first ? 'active' : 'action-color'}}"></li>
                             @endforeach
                         </ol>
                     </div>
@@ -248,6 +318,7 @@
         </div>
 
     </section>
+
 
     {{--Call to Action--}}
     <section id="sectioncta">

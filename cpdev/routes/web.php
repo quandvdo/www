@@ -21,6 +21,9 @@ Route::namespace('Frontend')->group(function(){
     Route::get('tours', 'MainController@tourIndex')->name('tour.index');
     Route::get('tours/{slug}', 'MainController@tourDetail')->name('tour.detail');
 
+    Route::get('packages', 'MainController@tourIndex')->name('packages.index');
+    Route::get('packages/{slug}', 'MainController@tourDetail')->name('packages.detail');
+
     Route::get('destinations', 'MainController@destinationIndex')->name('destination.index');
     Route::get('destinations/{slug}', 'MainController@destinationDetail')->name('destination.detail');
 
@@ -28,6 +31,7 @@ Route::namespace('Frontend')->group(function(){
     Route::get('categories/{slug}', 'MainController@categoriesDetail')->name('category.detail');
 
     Route::get('blogs', 'MainController@blogIndex')->name('blog.index');
+    Route::get('blogs/promotion', 'MainController@blogIndex')->name('blog.promotion');
     Route::get('blogs/recents', 'MainController@blogIndex')->name('blog.recent');
     Route::get('blogs/{slug}', 'MainController@blogDetail')->name('blog.detail');
 });

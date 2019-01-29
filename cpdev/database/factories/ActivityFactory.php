@@ -28,6 +28,7 @@ $factory->define(\App\Models\Activity\Activity::class, function (Faker $faker) {
         'duration' => $faker->numberBetween(1,20),
         'age' =>$faker->numberBetween(12,65),
         'slug' => str_replace(' ', '-', $name),
-        'isFeature' => $faker->boolean(40)
+        'isFeature' => $faker->boolean(40),
+        'isPackage' => $faker->boolean(50)
     ];
 });

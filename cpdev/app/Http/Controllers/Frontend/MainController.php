@@ -15,12 +15,15 @@ class MainController extends Controller
     public function landing()
     {
         $city = Activity::select('location')->inRandomOrder()->distinct()->take(8)->get();
-        $activity = Activity::findByFeature();
+        $tour = Activity::findByFeature('tour');
+        $package = Activity::findByFeature('package');
+        $blogs = Activity::findByFeature('package');
         $testimonial = Testimonials::take(5)->inRandomOrder()->get();
         return view('frontend.pages.landing')
             ->with(['cities' => $city,
-                'activities' => $activity,
-                'blogs' => $activity,
+                'tours' => $tour,
+                'packages' => $package,
+                'blogs' => $blogs,
                 'testimonials' => $testimonial
             ]);
     }
