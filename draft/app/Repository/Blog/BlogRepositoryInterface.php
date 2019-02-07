@@ -21,7 +21,13 @@ interface BlogRepositoryInterface
 
     public function show($id);
 
-    public function find($slug);
+    public function find($id);
 
-    public function getLandingPost($numberOfPost);
+    public function findBySlug($slug);
+
+    public function getIndexPost($numberOfPost, $link = false);
+
+    public function getPromotionPost($numberOfPost, $link = false);
+
+    public function getNewsPost($numberOfPost, $link = false);
 }

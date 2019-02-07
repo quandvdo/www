@@ -27,6 +27,8 @@ interface ActivityRepositoryInterface
 
     public function getRandomLocation();
 
-    public function getFeatureActivityByType($type);
+    public function getLocationIndex($numberOfPaginate);
+
+    public function getFeatureActivityByType($type, $paginate, $link = false);
 
 }

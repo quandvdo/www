@@ -87,4 +87,5 @@ class ActivityController extends Controller
     {
         //
     }
+
 }

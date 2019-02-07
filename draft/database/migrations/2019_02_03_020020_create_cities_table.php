@@ -17,11 +17,14 @@ class CreateCitiesTable extends Migration
             $table->increments('id');
             $table->string('country')->nullable();
             $table->string('city');
+            $table->string('title');
+            $table->string('slug');
+            $table->string('area');
             $table->string('long')->nullable();
             $table->string('lat')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
-            $table->index(['city']);
+            $table->index(['city','slug']);
         });
     }
 

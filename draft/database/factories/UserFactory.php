@@ -89,14 +89,29 @@ $factory->define(\App\Models\Utility\Category::class, function (Faker $faker) {
 
 $factory->define(\App\Models\Blog\Blog::class, function (Faker $faker) {
     $category = Category::where('Type', '=', 'Blog')->pluck('id')->toArray();
+    $name = $faker->words(rand(3, 6), true);
     return [
         'isPublished' => $faker->boolean(50),
         'isPromotion' => $faker->boolean(50),
-        'title' => $faker->words(rand(3, 6), true),
-        'content' => $faker->text(rand(200, 600)),
+        'title' => $name,
+        'subtitle' => $faker->words(rand(3, 9), true),
+        'slug' => \App\Models\Utility\Helper::slug($name),
+        'content' => '<p>' . $faker->text(rand(200, 600)) . '</p>' . '<p>' . $faker->text(rand(200, 600)) . '</p>' . '<p>' . $faker->text(rand(200, 600)) . '</p>' . '<p>' . $faker->text(rand(200, 600)) . '</p>',
         'user_id' => rand(1, 2),
         'category_id' => $faker->randomElement($category)
 
+    ];
+});
+
+$factory->define(\App\Models\Utility\Comment::class, function(Faker $faker){
+    $blog = \App\Models\Blog\Blog::pluck('id')->toArray();
+    $user = \App\Models\User::pluck('id')->toArray();
+    return [
+        'user_id' => $faker->randomElement($user),
+        'body' => $faker->text(rand(100,300)),
+        'commentable_id' => $faker->randomElement($blog),
+        'commentable_type' => 'App\Models\Blog\Blog',
+        'created_at' => $faker->dateTime('now')
     ];
 });
 

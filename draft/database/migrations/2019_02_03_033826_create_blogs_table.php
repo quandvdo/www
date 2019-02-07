@@ -18,6 +18,8 @@ class CreateBlogsTable extends Migration
             $table->boolean('isPublished')->default(false);
             $table->boolean('isPromotion')->default(false);
             $table->string('title');
+            $table->string('subtitle')->nullable();
+            $table->string('slug');
             $table->text('content')->nullable();
             $table->unsignedInteger('user_id')->default(1);
             $table->unsignedInteger('category_id');

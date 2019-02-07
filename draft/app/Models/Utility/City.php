@@ -13,6 +13,6 @@ class City extends Model
 
     public function activities()
     {
-        return $this->hasMany(Activity::class);
+        return $this->hasMany(Activity::class,'location_id', 'id');
     }
 }

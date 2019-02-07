@@ -44,16 +44,41 @@ class DbBlogRepository implements BlogRepositoryInterface
 
     public function show($id)
     {
-        // TODO: Implement show() method.
+        return $this->blog->find($id);
     }
 
-    public function find($slug)
+    public function findBySlug($slug)
     {
         // TODO: Implement find() method.
+        return $this->blog->where('slug', '=', $slug)->first();
     }
 
-    public function getLandingPost($numberOfPost)
+    public function getIndexPost($numberOfPost, $link = false)
     {
+        if ($link = true) {
+            return $this->blog->published(true)->orderBy('created_at', 'desc')->paginate($numberOfPost);
+        }
         return $this->blog->published(true)->orderBy('created_at', 'desc')->take($numberOfPost)->get();
+    }
+
+    public function getPromotionPost($numberOfPost, $link = false)
+    {
+        if ($link = true) {
+            return $this->blog->published(true)->promotion(true)->orderBy('created_at', 'desc')->paginate($numberOfPost);
+        }
+        return $this->blog->published(true)->promotion(true)->orderBy('created_at', 'desc')->take($numberOfPost)->get();
+    }
+
+    public function getNewsPost($numberOfPost, $link = false)
+    {
+        if ($link = true) {
+            return $this->blog->published(true)->promotion(false)->orderBy('created_at', 'desc')->paginate($numberOfPost);
+        }
+        return $this->blog->published(true)->promotion(false)->orderBy('created_at', 'desc')->take($numberOfPost)->get();
+    }
+
+    public function find($id)
+    {
+        return $this->blog->find($id);
     }
 }

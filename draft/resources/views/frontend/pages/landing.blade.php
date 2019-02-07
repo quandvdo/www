@@ -65,10 +65,10 @@
         </div>
         <div class="container destination-section">
             <div class="row">
-                @foreach($cities as $city)
+                @foreach($menucities as $city)
                     <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-lg-0 my-4 complete-image">
                         <a class=""
-                           href="{{route('destination.detail',['slug' => \App\Models\Utility\Helper::slug($city->location)])}}"
+                           href="{{route('destination.detail',['slug' => \App\Models\Utility\Helper::slug($city->city)])}}"
                            target="_blank">
                             <div class="destination-item">
                                 <img src="https://picsum.photos/300/450?image={{rand(1,1000)}}"
@@ -92,7 +92,7 @@
 
     <section id="section3">
         <div class="container">
-            <h2 class="black front">Explore this tours</h2>
+            <h2 class="black front">Explore those highlight tours</h2>
             <div class="row mb-5">
                 <div class="col-sm-9 front">
                     <div class="separator "></div>
@@ -108,7 +108,7 @@
         <div class="content tours-homepage">
             <div class="container">
                 <div class="row">
-                    @foreach($tours as  $key=>$tour)
+                    @foreach($menutours as  $key=>$tour)
                         <div
                                 class="col-xs-12 col-md-6 col-lg-4 {{ $loop->last ? 'my-4 mx-auto' : 'mb-lg-0 mb-4 my-4'}}">
                             <div class="card">
@@ -174,7 +174,7 @@
         <div class="content tours-homepage">
             <div class="container">
                 <div class="row">
-                    @foreach($packages as  $key=>$package)
+                    @foreach($menupackages as  $key=>$package)
                         <div
                                 class="col-xs-12 col-md-6 col-lg-4 {{ $loop->last ? 'my-4 mx-auto' : 'mb-lg-0 mb-4 my-4'}}">
                             <div class="card">
@@ -233,16 +233,18 @@
                                 <div class="dates tiny white">
                                     <span>{{$blog->created_at->format('d')}}</span>
                                     <p class="white text-center">{{$blog->created_at->format('M')}}</p>
+                                    @if($blog->isPromotion)
+                                        <a href="{{route('blog.promotion')}}" class="badge badge-primary">promotion</a>
+                                    @else
+                                        <a href="{{route('blog.news')}}" class="badge badge-info">News</a>
+                                    @endif
                                 </div>
                                 <div class="media-body mt-sm-0 mt-3  align-self-center">
-                                    <a class="title-blog black" href="/blog/{{ $blog->slug }}"><h6
+                                    <a class="title-blog black" href="/blogs/{{ $blog->slug }}"><h6
                                                 class="mt-0 ">{{$blog->title}}</h6></a>
                                     <p class="">{{$blog->subtitle}}</p>
                                     <div class="meta-bottom d-flex justify-content-between">
-                                        <p class="primary-color"><span class="far primary-color fa-heart"></span> 0
-                                            Likes
-                                        </p>
-                                        <p class="primary-color"><span class="far primary-color fa-comments"></span> 0
+                                        <p class="primary-color"><span class="far primary-color fa-comments"></span> {{$blog->all_comments_count}}
                                             Comments
                                         </p>
                                     </div>
@@ -264,11 +266,13 @@
     </section>
     <!-- End section 3 tours-->
     <section id="section4">
-        <img class="curve2" src="{{asset('svg/curve.svg')}}" alt="imageSectionDivider">
+        <div class="chapter2">
+            <img class="curve4" src="{{asset('svg/curvegrey.svg')}}" alt="image">
+        </div>
         <div class="container testimonials">
             <div class="row">
                 <div class="col-md-8 offset-md-2 col-10 offset-1">
-                    <h3 class="text-center  mb-4 black"><strong>Tour Experts</strong></h3>
+                    <h3 class="text-center mb-4 black"><strong>Tour Experts</strong></h3>
                     <img class="svgcenter quotesicon" src="{{asset('svg/quotes.svg')}}" alt="image">
 
                     <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
@@ -321,6 +325,7 @@
 
     {{--Call to Action--}}
     <section id="sectioncta">
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 ">

@@ -5,6 +5,7 @@ namespace App\Models\Activity;
 use App\Models\User;
 use App\Models\Utility\Category;
 use App\Models\Utility\City;
+use App\Models\Utility\Comment;
 use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
@@ -45,6 +46,16 @@ class Activity extends Model
         return $this->hasOne(City::class,'id','location_id');
     }
 
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
+    }
+
+    public function allComments()
+    {
+        return  $this->morphMany(Comment::class, 'commentable');
+    }
+
     /*
      * Scope query
      */
@@ -71,6 +82,11 @@ class Activity extends Model
     public function scopeFeature($query, $value)
     {
         return $query->where('isFeature', $value);
+    }
+
+    public function scopeSlug($query, $value)
+    {
+        return $query->where('slug', '=', $value);
     }
 
 }

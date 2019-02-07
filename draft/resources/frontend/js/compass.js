@@ -87,14 +87,14 @@ $(function () {
 //Initiate Pop Up
 
 $(document).ready(function () {
-/*    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });*/
+    /*    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+        });*/
 });
 
 
@@ -174,6 +174,7 @@ $(document).ready(function () {
     })
         .on('slide.bs.carousel slid.bs.carousel', toggleH).trigger('slide.bs.carousel')
         .on('slide.bs.carousel slid.bs.carousel', toggleC).trigger('slide.bs.carousel');
+    $('.alert').alert();
 });
 
 //Instagram Feed

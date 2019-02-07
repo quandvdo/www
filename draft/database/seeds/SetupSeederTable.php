@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class SetupSeederTable extends Seeder
 {
@@ -9,7 +10,7 @@ class SetupSeederTable extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         \App\Models\User::create([
             'name' => 'Compass R00tz',
@@ -76,7 +77,7 @@ We can organize private tours or group tours, budget packages or luxury trip all
         $cities = [
             'Ha Noi', 'Bac Can', 'Bac Ninh',
             'Cao Bang', 'Dien Bien', 'Ha Giang', 'Ha Nam',
-             'Hoa Binh', 'Hung Yen', 'Lai Chau',
+            'Hoa Binh', 'Hung Yen', 'Lai Chau',
             'Lao Cai', 'Nam Dinh', 'Ninh Binh', 'Phu Tho',
             'Quang Binh', 'Quang Tri', 'Son La', 'Tuyen Quang',
             'Thai Binh', 'Thai Nguyen', 'Vinh Phuc',
@@ -98,6 +99,10 @@ We can organize private tours or group tours, budget packages or luxury trip all
         foreach ($citiesSorted as $city) {
             \App\Models\Utility\City::create([
                 'country' => 'VN',
+                'title' => $city . ' ' . $faker->words(3,true),
+                'slug' => \App\Models\Utility\Helper::slug($city),
+                'area' => rand(1, 50) . 'Km2',
+                'description' => $faker->text(rand(2000, 6000)),
                 'city' => $city,
                 'long' => 0,
                 'lat' => 0

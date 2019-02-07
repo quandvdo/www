@@ -7,6 +7,7 @@ use App\Repository\Activity\ActivityCategoryRepositoryInterface;
 use App\Repository\Activity\ActivityRepositoryInterface;
 use App\Repository\Activity\ActivityRouteRepositoryInterface;
 use App\Repository\Blog\BlogRepositoryInterface;
+use App\Repository\Utility\CityRepositoryInterface;
 use App\Repository\Utility\OptionRepositoryInterface;
 use App\Repository\Utility\TestimonialRepositoryInterface;
 use App\Service\Activity\DbActivityAddonRepository;
@@ -14,6 +15,7 @@ use App\Service\Activity\DbActivityCategoryRepository;
 use App\Service\Activity\DbActivityRepository;
 use App\Service\Activity\DbActivityRouteRepository;
 use App\Service\Blog\DbBlogRepository;
+use App\Service\Utilty\DbCityRepository;
 use App\Service\Utilty\DbOptionRepository;
 use App\Service\Utilty\DbTestimonialRepository;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +37,7 @@ class BackendServiceProvider extends ServiceProvider
         $this->app->bind(BlogRepositoryInterface::class, DbBlogRepository::class);
         $this->app->bind(TestimonialRepositoryInterface::class, DbTestimonialRepository::class);
         $this->app->bind(OptionRepositoryInterface::class, DbOptionRepository::class);
+        $this->app->bind(CityRepositoryInterface::class, DbCityRepository::class);
 
     }
 

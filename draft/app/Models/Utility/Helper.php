@@ -39,5 +39,17 @@ class Helper
         return $text;
     }
 
+    public static function excerpt($content, $cutOffLength)
+    {
+        $content = strip_tags($content);
+        $charAtPosition = "";
+        $titleLength = strlen($content);
 
+        do {
+            $cutOffLength++;
+            $charAtPosition = substr($content, $cutOffLength, 1);
+        } while ($cutOffLength < $titleLength && $charAtPosition != " ");
+
+        return substr($content, 0, $cutOffLength) . '...';
+    }
 }

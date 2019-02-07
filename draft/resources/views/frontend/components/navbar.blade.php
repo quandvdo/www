@@ -1,9 +1,8 @@
 <!-- navbar -->
 <div id="wrapper-navbar">
     <nav class="navbar py-3 fixed-top navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand ml-sm-5" href="{{route('landing')}}">
-            {{--<img src="{{asset('images/logo.png')}}" alt="Compass Travel Logo">--}}
-            Compass Travel
+        <a class="navbar-brand ml-sm-5" href="{{route('landing')}}">Compass
+            Travel{{--<img src="{{asset('images/logo.png')}}" alt="Compass Travel Logo">--}}
         </a>
         <button class="navbar-toggler collapsed navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -13,7 +12,7 @@
             <span class="icon-bar bottom-bar"></span>
             <span class="sr-only">Toggle navigation</span>
         </button>
-        <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">.
+        <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 {{--
                     <li class="nav-item mr-3 open my-lg-0 my-2 ml-lg-0 ml-3">
@@ -27,7 +26,7 @@
                         Destinations
                     </a>
                     <div class="dropdown-menu dropdownId dropdown-menu-right" aria-labelledby="navbarDestination">
-                        @foreach($cities as $city)
+                        @foreach($menucities as $city)
                             <a class="dropdown-item mt-1"
                                href="{{route('destination.detail', ['slug' => \App\Models\Utility\Helper::slug($city->city)])}}">{{$city->city}}
                                 Tours</a>
@@ -46,9 +45,9 @@
                     </a>
                     <div class="dropdown-divider d-lg-none"></div>
                     <div class="dropdown-menu dropdownId dropdown-menu-right" aria-labelledby="navbarPackage">
-                        @foreach($packages as $package)
+                        @foreach($menupackages as $package)
                             <a class="dropdown-item mt-1"
-                               href="{{route('tour.detail', ['slug'=>$package->title])}}">{{$package->title}}</a>
+                               href="{{route('tour.detail', ['slug'=>$package->slug])}}">{{$package->title}}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
                         <a class="dropdown-item mb-1" href="{{route('tour.index')}}">Browse All Tours </a>
@@ -63,9 +62,9 @@
                     </a>
                     <div class="dropdown-divider d-lg-none"></div>
                     <div class="dropdown-menu dropdownId dropdown-menu-right" aria-labelledby="navbarTour">
-                        @foreach($tours as $tour)
+                        @foreach($menutours as $tour)
                             <a class="dropdown-item mt-1"
-                               href="{{route('tour.detail', ['slug'=>$tour->title])}}">{{$tour->title}}</a>
+                               href="{{route('tour.detail', ['slug'=>$tour->slug])}}">{{$tour->title}}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
                         <a class="dropdown-item mb-1" href="{{route('tour.index')}}">Browse All Tours </a>
@@ -80,7 +79,9 @@
                     </a>
                     <div class="dropdown-divider d-lg-none"></div>
                     <div class="dropdown-menu dropdownId dropdown-menu-right" aria-labelledby="navbarBlogs">
-                        <a class="dropdown-item mt-1" href="{{route('blog.index')}}">Most recent Travel news</a>
+                        <a class="dropdown-item mt-1" href="{{route('blog.promotion')}}">Latest promotion</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item mt-1" href="{{route('blog.news')}}">Recent travel news</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('blog.index')}}">All Travel Blogs</a>
                     </div>

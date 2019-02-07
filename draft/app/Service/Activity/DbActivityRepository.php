@@ -11,6 +11,7 @@ namespace App\Service\Activity;
 
 use App\Models\Activity\Activity;
 use App\Repository\Activity\ActivityRepositoryInterface;
+use Illuminate\Support\Facades\DB;
 
 class DbActivityRepository implements ActivityRepositoryInterface
 {
@@ -24,8 +25,7 @@ class DbActivityRepository implements ActivityRepositoryInterface
 
     public function find($slug)
     {
-        // TODO: Implement find() method.
-        return $this->activity::where('slug', '=', $slug)->first();
+        return $this->activity::Slug($slug)->first();
     }
 
 
@@ -52,27 +52,44 @@ class DbActivityRepository implements ActivityRepositoryInterface
     public function show($id)
     {
         // TODO: Implement show() method.
+        return $this->activity->findOrFail($id);
     }
 
-    public function getFeatureActivityByType($type)
+    public function getFeatureActivityByType($type, $paginate, $link = false)
     {
         $data = new Activity();
         switch ($type) {
             case 'package':
+                if (!$link) {
+                    $data = $this->activity::active(true)
+                        ->package(true)
+                        ->feature(true)
+                        ->orderBy('created_at', 'desc')
+                        ->take($paginate)
+                        ->get();
+                    break;
+                }
                 $data = $this->activity::active(true)
                     ->package(true)
                     ->feature(true)
                     ->orderBy('created_at', 'desc')
-                    ->take(6)
-                    ->get();
+                    ->paginate($paginate);
                 break;
             case 'tour':
+                if (!$link) {
+                    $data = $this->activity::active(true)
+                        ->package(false)
+                        ->feature(true)
+                        ->orderBy('created_at', 'desc')
+                        ->take($paginate)
+                        ->get();
+                    break;
+                }
                 $data = $this->activity::active(true)
                     ->package(false)
                     ->feature(true)
                     ->orderBy('created_at', 'desc')
-                    ->take(6)
-                    ->get();
+                    ->paginate($paginate);
                 break;
             default:
         }
@@ -83,11 +100,24 @@ class DbActivityRepository implements ActivityRepositoryInterface
     {
         // TODO: Implement getRandomLocation() method.
         return $this->activity::active(true)
-            ->join('cities', 'activities.location_id', '=' , 'cities.id')
+            ->join('cities', 'activities.location_id', '=', 'cities.id')
             ->select('cities.city')
             ->inRandomOrder()
             ->distinct()
             ->take(8)
             ->get();
     }
+
+    public function getLocationIndex($numberOfPaginate)
+    {
+        return $this->activity::active(true)
+            ->join('cities', 'activities.location_id', '=', 'cities.id')
+            ->select('cities.city',
+                DB::raw('count(activities.id) as count'))
+            ->groupBy('cities.city')
+            ->orderBy('count', 'desc')
+            ->paginate($numberOfPaginate);
+    }
+
+
 }

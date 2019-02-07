@@ -30,9 +30,13 @@ Route::get('categories', 'FrontendController@categoriesIndex')->name('category.i
 Route::get('categories/{slug}', 'FrontendController@categoriesDetail')->name('category.detail');
 
 Route::get('blogs', 'FrontendController@blogIndex')->name('blog.index');
-Route::get('blogs/promotion', 'FrontendController@blogIndex')->name('blog.promotion');
-Route::get('blogs/recents', 'FrontendController@blogIndex')->name('blog.recent');
+Route::get('blogs/promotion', 'FrontendController@promotionIndex')->name('blog.promotion');
+Route::get('blogs/news', 'FrontendController@newsIndex')->name('blog.news');
 Route::get('blogs/{slug}', 'FrontendController@blogDetail')->name('blog.detail');
+
 Auth::routes();
+
+Route::post('blogs/comment', 'Utility\CommentController@store')->name('comment.add');
+Route::post('blogs/reply', 'Utility\CommentController@replyStore')->name('reply.add');
 
 Route::get('/home', 'HomeController@index')->name('home');

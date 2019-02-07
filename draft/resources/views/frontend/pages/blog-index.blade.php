@@ -1,10 +1,9 @@
 @extends('frontend._layout.main')
 
 @section('content')
-
     @component('frontend.components.subheader',
-['title' => 'Recent Blogs',
-'img' => 'blog-single.jpg'])
+        ['title' => Route::currentRouteName() == 'blog.index' ? 'All Travel Blogs' : Route::currentRouteName() == 'blog.index' ? 'Recent Travel News' : 'Latest CompassTravel Promotion',
+        'img' => 'blog-single.jpg'])S
     @endcomponent
 
     <section id="section3" class="tour-list-sidebar tour-list-sidebar-2-col">
@@ -22,7 +21,7 @@
                     </div>
 
                     <div class="more-info tags my-4">
-
+                        {{--TODO: TAGs Display--}}
                         <h6 class="black semibold text-center mx-4 mt-3 mb-3 info-title">Popular Tags</h6>
 
                         <div class="text-center px-3 px-lg-2 pb-3 ">
@@ -38,18 +37,7 @@
                         </div>
                     </div>
 
-                    <div class="more-info mx-auto my-4">
-                        <h6 class="black semibold text-center mx-4 mt-3 mb-3 info-title">Quick Contact</h6>
-                        <div class="pb-2">
-
-                            <a href="tel:+133331111"><h5 class="grey text-center tel-info"><i
-                                            class="fas primary-color fa-phone faa-tada animated mr-2 grey my-lg-0 mb-1"></i>(+1)
-                                    3333.1111</h5></a>
-                            <a href="mailto:hello@ourcompany.com"><h5 class="grey text-center mail-info"><i
-                                            class="fas fa-envelope faa-horizontal animated primary-color mr-2"></i>hello@ourcompany.com
-                                </h5></a>
-                        </div>
-                    </div>
+                    @include('frontend.components.partials.quick-contact')
 
 
                     <div id="instasidebar" class="grid2 runsidebar">
@@ -79,21 +67,24 @@
                                                 <p class="white  text-center">{{$blog->created_at->format('M')}}</p>
                                             </div>
                                             <div class="media-body mt-sm-0 mt-3  align-self-center">
-                                                <a class="title-blog black" href="/blog/{{$blog->slug}}"><h6
+                                                <a class="title-blog black" href="/blogs/{{$blog->slug}}"><h6
                                                             class="mt-0 ">{{$blog->title}}</h6></a>
-
-                                                <p class="">{{$blog->subtitle}}
-                                                </p>
+                                                <p>{{\App\Models\Utility\Helper::excerpt($blog->content, 150)}}</p>
                                                 <div class="meta-bottom d-flex justify-content-between">
-                                                    <p class="primary-color"><span
-                                                                class="far primary-color fa-heart"></span> 0
-                                                        Likes</p>
-                                                    <p class="primary-color"><span
-                                                                class="far primary-color fa-comments"></span>
-                                                        0
-                                                        Comments</p>
+                                                    <p class="primary-color">
+                                                        @if($blog->isPromotion)
+                                                            <a href="{{route('blog.promotion')}}" class="btn btn-primary btn-sm">promotion</a>
+                                                        @else
+                                                            <a href="{{route('blog.news')}}" class="btn btn-info btn-sm">News</a>
+                                                        @endif
+                                                    </p>
+                                                    <p class="primary-color">
+                                                        <span class="far primary-color fa-comments"></span> {{$blog->all_comments_count}}
+                                                        Comments
+                                                    </p>
                                                 </div>
                                             </div>
+
                                         </div>
                                     @endforeach
                                 </div>
