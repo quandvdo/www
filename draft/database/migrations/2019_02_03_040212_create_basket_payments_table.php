@@ -15,6 +15,7 @@ class CreateBasketPaymentsTable extends Migration
     {
         Schema::create('basket_payments', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('basket_id');
             $table->unsignedInteger('payment_type')->default(1)->comment('Default cash');
             $table->timestamp('payment_date')->useCurrent();
             $table->string('reference')->nullable();
@@ -23,6 +24,7 @@ class CreateBasketPaymentsTable extends Migration
             $table->boolean('isActive');
             $table->unsignedInteger('agent_id')->default('1')->comment('Pay to account - Default = CompassTravel');
             $table->timestamps();
+            $table->foreign('basket_id')->references('id')->on('baskets');
             $table->foreign('agent_id')->references('id')->on('agents');
         });
     }

@@ -6,11 +6,13 @@ use App\Models\User;
 use App\Models\Utility\Category;
 use App\Models\Utility\City;
 use App\Models\Utility\Comment;
+use App\Models\Utility\Image;
 use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
 {
-    protected $with = ['category', 'location','price'];
+    protected $with = ['category', 'location','price','addons'];
+    protected $withCount = ['allComments'];
 
     /*
      * Relationship
@@ -56,6 +58,12 @@ class Activity extends Model
         return  $this->morphMany(Comment::class, 'commentable');
     }
 
+    public function images()
+    {
+        return $this->morphMany(Image::class,'sources');
+    }
+
+
     /*
      * Scope query
      */
@@ -88,5 +96,7 @@ class Activity extends Model
     {
         return $query->where('slug', '=', $value);
     }
+
+
 
 }

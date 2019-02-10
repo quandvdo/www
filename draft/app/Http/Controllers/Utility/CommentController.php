@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Utility;
 
+use App\Http\Requests\StoreComment;
 use App\Models\Blog\Blog;
 use App\Models\Utility\Comment;
 use App\Repository\Activity\ActivityRepositoryInterface;
@@ -22,11 +23,12 @@ class CommentController extends Controller
         $this->activity = $activityRepository;
     }
 
-    public function store(Request $request)
+    public function store(StoreComment $request)
     {
+        $validated = $request->validated();
         $type = $request['type'];
         $comment = new Comment();
-        $comment->body = $request->get('comment_body');
+        $comment->body = trim(strip_tags($request['comment_body']));
         $comment->parent_id = null;
         $comment->user()->associate($request->user());
         $model_id = $request['id'];
@@ -45,11 +47,11 @@ class CommentController extends Controller
 
     }
 
-    public function replyStore(Request $request)
+    public function replyStore(StoreComment $request)
     {
         $type = $request['type'];
         $reply = new Comment();
-        $reply->body = $request->get('comment_body');
+        $reply->body = trim(strip_tags($request['comment_body']));
         $reply->user()->associate($request->user());
         $reply->parent_id = $request->get('comment_id');
         $model_id = $request['id'];

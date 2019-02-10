@@ -1,7 +1,25 @@
 @extends('frontend._layout.main')
 
-@push('meta')
+@push('css')
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@endpush
 
+@push('js')
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker({
+                numberOfMonths: 3,
+                showButtonPanel: true,
+                dateFormat: "yy-mm-dd"
+            });
+            $("#spinner").spinner();
+        });
+
+    </script>
+@endpush
+
+@push('meta')
     <meta property="og:url" content="http:{{urldecode(url()->current())}}"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{$tour->title}}"/>
@@ -20,15 +38,15 @@
         <div class="container-fluid">
             <div class="row">
                 @include('frontend.components.sidebar-detail', ['name' => $tour->title])
-
                 <div class="col-xs-12 col-md-12 col-lg-8 single-tour">
+                    @include('frontend.components.alert')
                     <h4 id="read-tour" class="black text-left mb-3 bold">{{$tour->title}}</h4>
 
                     <div class="row">
                         <div class="col-lg-4 col-sm-4 col-12 text-left">
                             <h6 class="primary-color semibold price-big">
-                                ${{number_format($tour->price->price,2)}}
-                                <span class="semibold subtitle">&nbsp;/ Per Person</span>
+                                ${{number_format($tour->price->price,2)}}<span
+                                        class="semibold subtitle">/ Per Person</span>
                             </h6>
                         </div>
 

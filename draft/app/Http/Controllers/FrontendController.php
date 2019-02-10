@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog\Blog;
+use App\Models\Utility\Tag;
 use App\Repository\Activity\ActivityRepositoryInterface;
 use App\Repository\Blog\BlogRepositoryInterface;
 use App\Repository\Utility\CityRepositoryInterface;
@@ -65,7 +66,7 @@ class FrontendController extends Controller
 
     public function tourDetail($slug)
     {
-        $detail = $this->activity->find($slug);
+        $detail = $this->activity->findBySlug($slug);
         return view('frontend.pages.tour-detail')->with('tour', $detail);
     }
 
@@ -80,14 +81,15 @@ class FrontendController extends Controller
     {
         $promotion = $this->blog->getPromotionPost(8, true);
         return view('frontend.pages.blog-index')
-            ->with('blogs', $promotion);
+            ->with(['blogs' => $promotion]);
     }
 
     public function newsIndex()
     {
         $news = $this->blog->getNewsPost(8, true);
+
         return view('frontend.pages.blog-index')
-            ->with('blogs', $news);
+            ->with(['blogs' => $news]);
     }
 
     public function blogDetail($slug)
@@ -99,7 +101,7 @@ class FrontendController extends Controller
 
     public function destinationIndex()
     {
-        $location = $this->city->getLandingItem(9,true);
+        $location = $this->city->getLandingItem(9, true);
         return view('frontend.pages.destination-index')
             ->with('destinations', $location);
     }
@@ -110,6 +112,13 @@ class FrontendController extends Controller
         $tours = $this->city->findAllTourBySlug($slug);
         return view('frontend.pages.destination-detail')
             ->with(['dest' => $location,
-            'tours' => $tours]);
+                'tours' => $tours]);
+    }
+
+    public function tagIndex($tag)
+    {
+        $blogs = $this->blog->findByTag($tag);
+        return view('frontend.pages.blog-index')
+            ->with('blogs', $blogs);
     }
 }

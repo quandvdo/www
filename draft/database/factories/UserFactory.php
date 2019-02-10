@@ -103,15 +103,31 @@ $factory->define(\App\Models\Blog\Blog::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(\App\Models\Utility\Comment::class, function(Faker $faker){
+$factory->define(\App\Models\Utility\Comment::class, function (Faker $faker) {
     $blog = \App\Models\Blog\Blog::pluck('id')->toArray();
     $user = \App\Models\User::pluck('id')->toArray();
     return [
         'user_id' => $faker->randomElement($user),
-        'body' => $faker->text(rand(100,300)),
+        'body' => $faker->text(rand(100, 300)),
         'commentable_id' => $faker->randomElement($blog),
         'commentable_type' => 'App\Models\Blog\Blog',
         'created_at' => $faker->dateTime('now')
+    ];
+});
+
+$factory->define(\App\Models\Utility\Tag::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word . ' ' .$faker->word
+    ];
+});
+
+$factory->define(\App\Models\Booking\Agent::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name(),
+        'phone' => $faker->e164PhoneNumber,
+        'address' => $faker->address,
+        'email' => $faker->freeEmail,
+        'cost' => $faker->randomFloat(2,0.01,1)
     ];
 });
 

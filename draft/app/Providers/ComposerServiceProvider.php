@@ -26,5 +26,7 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer('*',
             'App\Http\ViewComposers\FrontendComposer@compose'
         );
+        view()->composer(['frontend.pages.blog-detail', 'frontend.pages.blog-index'],
+            'App\Http\ViewComposers\FrontendComposer@tags');
     }
 }

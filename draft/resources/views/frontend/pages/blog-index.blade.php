@@ -20,24 +20,9 @@
                         </div>
                     </div>
 
-                    <div class="more-info tags my-4">
-                        {{--TODO: TAGs Display--}}
-                        <h6 class="black semibold text-center mx-4 mt-3 mb-3 info-title">Popular Tags</h6>
+                    @include('frontend.components.partials.sidebar.tag')
 
-                        <div class="text-center px-3 px-lg-2 pb-3 ">
-                            <a class="btn btn-outline-primary px-3  mr-1 mb-1 btn-sm " href="#" role="button">Europe</a>
-                            <a class="btn btn-outline-primary px-3 mr-1 mb-1 btn-sm " href="#" role="button">travel
-                                tips</a>
-                            <a class="btn btn-outline-primary px-3  mr-1 mb-1 btn-sm " href="#" role="button">travel</a>
-                            <a class="btn btn-outline-primary px-3  mr-1 mb-1 btn-sm " href="#"
-                               role="button">England</a>
-                            <a class="btn btn-outline-primary px-3  mr-1 mb-1 btn-sm " href="#" role="button">travel
-                                blog</a>
-                            <a class="btn btn-outline-primary px-3  mr-1 mb-1 btn-sm" href="#" role="button">parks</a>
-                        </div>
-                    </div>
-
-                    @include('frontend.components.partials.quick-contact')
+                    @include('frontend.components.partials.sidebar.quick-contact')
 
 
                     <div id="instasidebar" class="grid2 runsidebar">
@@ -73,9 +58,11 @@
                                                 <div class="meta-bottom d-flex justify-content-between">
                                                     <p class="primary-color">
                                                         @if($blog->isPromotion)
-                                                            <a href="{{route('blog.promotion')}}" class="btn btn-primary btn-sm">promotion</a>
+                                                            <a href="{{route('blog.promotion')}}"
+                                                               class="btn btn-primary btn-sm">promotion</a>
                                                         @else
-                                                            <a href="{{route('blog.news')}}" class="btn btn-info btn-sm">News</a>
+                                                            <a href="{{route('blog.news')}}"
+                                                               class="btn btn-info btn-sm">News</a>
                                                         @endif
                                                     </p>
                                                     <p class="primary-color">
@@ -83,6 +70,12 @@
                                                         Comments
                                                     </p>
                                                 </div>
+                                                <p>
+                                                    @foreach($blog->tags as $tag)
+                                                        <a href="#"
+                                                           class="btn btn-outline-primary px-3 mr-1 mb-1 btn-sm ">{{$tag->name}}</a>
+                                                    @endforeach
+                                                </p>
                                             </div>
 
                                         </div>

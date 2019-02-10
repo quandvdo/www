@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>toor</user-name>
-      <introspection-schemas>*:compassjson,qacompass</introspection-schemas>
+      <introspection-schemas>*:compassjson,draft,qacompass</introspection-schemas>
     </data-source>
   </component>
 </project>

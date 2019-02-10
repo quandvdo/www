@@ -9,21 +9,20 @@
                     </button>
                 </div>
             </div>
-            <a href="{{route('tour.index')}}" class="btn-gallery mb-2 d-lg-inline-block d-block">
-            <span class="btn btn-outline-danger pt-2 mr-1 px-3">
-                    All tours
+            <a href="{{route('tour.index')}}" class="btn btn-outline-danger  mb-2 d-lg-inline-block d-block">
+                All tours
                 <i class="ml-2 fas fa-envelope"></i>
-            </span>
             </a>
         @endif
-        @include('frontend.components.partials.view-gallery')
-        @include('frontend.components.partials.share-tour')
+
+        @include('frontend.components.partials.sidebar.view-gallery')
+        @include('frontend.components.partials.sidebar.share-tour')
     </div>
     @if( Route::currentRouteName() == 'destination.detail')
     @else
-        @include('frontend.components.partials.book-this-tour')
+        @include('frontend.components.partials.sidebar.book-this-tour')
     @endif
-    @include('frontend.components.partials.quick-contact')
+    @include('frontend.components.partials.sidebar.quick-contact')
     <a href="{{route('blog.promotion')}}">
         <img src="{{asset('images/promotion.jpg')}}"
              class="w-100 img-fluid mx-auto d-block mt-4"

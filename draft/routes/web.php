@@ -39,4 +39,8 @@ Auth::routes();
 Route::post('blogs/comment', 'Utility\CommentController@store')->name('comment.add');
 Route::post('blogs/reply', 'Utility\CommentController@replyStore')->name('reply.add');
 
+Route::post('booking', 'Booking\BasketController@store')->name('booking.store');
+Route::get('booking/{id}', 'Booking\BasketController@show')->name('booking.show');
+
+
 Route::get('/home', 'HomeController@index')->name('home');

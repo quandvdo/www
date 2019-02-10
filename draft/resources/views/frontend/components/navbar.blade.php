@@ -1,6 +1,6 @@
 <!-- navbar -->
 <div id="wrapper-navbar">
-    <nav class="navbar py-3 fixed-top navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar py-3 fixed-top navbar-expand-lg navbar-light bg-dark no-print">
         <a class="navbar-brand ml-sm-5" href="{{route('landing')}}">Compass
             Travel{{--<img src="{{asset('images/logo.png')}}" alt="Compass Travel Logo">--}}
         </a>

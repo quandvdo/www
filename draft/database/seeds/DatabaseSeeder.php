@@ -13,8 +13,10 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(SetupSeederTable::class);
          $this->call(TestimonialSeeder::class);
+         $this->call(TagSeeder::class);
          $this->call(BlogSeeder::class);
          $this->call(ActivitySeeder::class);
          $this->call(CommentSeeder::class);
+         $this->call(AgentSeeder::class);
     }
 }

@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer>
-    <section id="footer">
+    <section id="footer" class="no-print">
         <div class="container">
             <div class="row text-center text-xs-center text-sm-left text-md-left">
                 <!-- Contact Information -->

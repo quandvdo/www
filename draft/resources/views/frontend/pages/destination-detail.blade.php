@@ -125,10 +125,11 @@
                                                         <h6 class="white text-right mb-0">
                                                             ${{number_format($tour->price->price,2)}}</h6>
                                                         <div class="review-card-image text-right mb-2 pb-1 mr-0">
-                                                            @for($i = 0 ; $i < rand(3,5);$i++)
+                                                         {{--   @for($i = 0 ; $i < rand(3,5);$i++)
                                                                 <i class="fas fa-star"></i>
-                                                            @endfor
-                                                            <span class="tiny white"> 0 reviews </span></div>
+                                                            @endfor--}}
+
+                                                            <span class="tiny white">{{$tour->all_comments_count}} reviews </span></div>
                                                     </div>
                                                 </div>
                                             </div>

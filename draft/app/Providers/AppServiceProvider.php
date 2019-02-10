@@ -8,6 +8,7 @@ use App\Service\Activity\DbActivityRepository;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Validation\Validator;
 
 class AppServiceProvider extends ServiceProvider
 {

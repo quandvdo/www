@@ -7,6 +7,7 @@ use App\Repository\Activity\ActivityCategoryRepositoryInterface;
 use App\Repository\Activity\ActivityRepositoryInterface;
 use App\Repository\Activity\ActivityRouteRepositoryInterface;
 use App\Repository\Blog\BlogRepositoryInterface;
+use App\Repository\Booking\BasketRepositoryInterface;
 use App\Repository\Utility\CityRepositoryInterface;
 use App\Repository\Utility\OptionRepositoryInterface;
 use App\Repository\Utility\TestimonialRepositoryInterface;
@@ -15,6 +16,7 @@ use App\Service\Activity\DbActivityCategoryRepository;
 use App\Service\Activity\DbActivityRepository;
 use App\Service\Activity\DbActivityRouteRepository;
 use App\Service\Blog\DbBlogRepository;
+use App\Service\Booking\DbBasketRepository;
 use App\Service\Utilty\DbCityRepository;
 use App\Service\Utilty\DbOptionRepository;
 use App\Service\Utilty\DbTestimonialRepository;
@@ -38,6 +40,8 @@ class BackendServiceProvider extends ServiceProvider
         $this->app->bind(TestimonialRepositoryInterface::class, DbTestimonialRepository::class);
         $this->app->bind(OptionRepositoryInterface::class, DbOptionRepository::class);
         $this->app->bind(CityRepositoryInterface::class, DbCityRepository::class);
+        $this->app->bind(BasketRepositoryInterface::class, DbBasketRepository::class);
+
 
     }
 

@@ -9,6 +9,7 @@
 namespace App\Http\ViewComposers;
 
 
+use App\Models\Utility\Tag;
 use App\Repository\Activity\ActivityRepositoryInterface;
 use App\Repository\Utility\CityRepositoryInterface;
 use App\Repository\Utility\OptionRepositoryInterface;
@@ -40,6 +41,12 @@ class FrontendComposer
         $view->with('options', end($options));
         $view->with('menutours', end($tours));
         $view->with('menupackages', end($packages));
+    }
+
+    public function tags(View $view)
+    {
+        $tags = Tag::withCount('blogs')->orderBy('blogs_count', 'desc')->take(10)->get();
+        $view->with('tags', end($tags));
     }
 
 }

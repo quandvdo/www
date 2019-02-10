@@ -19,6 +19,7 @@ class CreateBasketsTable extends Migration
             $table->decimal('basket_total', 13, 2);
             $table->datetime('payment_date')->nullable();
             $table->datetime('invoice_date')->nullable();
+            $table->integer('quantity')->default(1);
             $table->unsignedInteger('user_id')->comment('Buyer ID -> get email');
             $table->unsignedInteger('agent_id')->default(1)->comment('Agent ID who book this tour');
             $table->timestamps();

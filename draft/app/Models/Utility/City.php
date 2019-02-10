@@ -15,4 +15,9 @@ class City extends Model
     {
         return $this->hasMany(Activity::class,'location_id', 'id');
     }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class,'sources');
+    }
 }

@@ -3793,3 +3793,23 @@ iframe {
 
     }
 }
+
+.alert-fixed {
+    position:fixed;
+    width: 50%;
+    bottom: 100px;
+    right: 100px;
+    z-index:10;
+    border-radius:0px
+}
+
+.invoice-summary {
+    width: 220px;
+    text-align: right;
+    float: right;
+}
+
+@media print
+{
+    .no-print {display:none;}
+}

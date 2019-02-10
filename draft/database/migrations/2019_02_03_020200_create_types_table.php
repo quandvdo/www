@@ -16,7 +16,7 @@ class CreateTypesTable extends Migration
         Schema::create('types', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('source_id');
-            $table->string('source_type')->comment('Payments, Items, ');
+            $table->string('source_type')->comment('Payments, Items');
             $table->timestamps();
         });
     }

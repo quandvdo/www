@@ -2,17 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41bb3f55-17d1-465a-952d-5756c5b5c2fe" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/components/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../draft/public/images/adventure-beach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../draft/public/images/blog-single.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../draft/public/images/destinations.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../draft/public/images/lakegirl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../draft/public/images/promotion.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../draft/public/images/search.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../draft/public/images/toronto.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Activity/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Activity/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ActivityFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ActivityFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/compass.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/compass.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/frontend/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/frontend/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/_layout/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/_layout/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/landing.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/tour-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/tour-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Http/Controllers/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Http/ViewComposers/FrontendComposer.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Http/ViewComposers/FrontendComposer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Models/Activity/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Models/Activity/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Models/Blog/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Models/Blog/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Models/Utility/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Models/Utility/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Repository/Activity/ActivityRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Repository/Activity/ActivityRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Repository/Blog/BlogRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Repository/Blog/BlogRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Service/Activity/DbActivityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Service/Activity/DbActivityRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/app/Service/Blog/DbBlogRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Service/Blog/DbBlogRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/database/migrations/2019_02_03_033826_create_blogs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/database/migrations/2019_02_03_033826_create_blogs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/database/seeds/ActivitySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/database/seeds/ActivitySeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/public/css/compass.css" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/public/css/compass.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/frontend/sass/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/frontend/sass/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/components/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/components/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/components/sidebar.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/landing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,34 +73,63 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="qacompass@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="qacompass: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="qacompass@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="qacompass: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="options: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="draft: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/_layout/main.blade.php">
+      <file leaf-file-name="MainController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            <state relative-caret-position="1088">
+              <caret line="70" column="5" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="70" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Option.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Utilities/Option.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppServiceProvider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Activity.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Activity/Activity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Utilities/Helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -84,75 +137,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="30" column="93" lean-forward="true" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landing.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/pages/landing.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="124" column="79" lean-forward="true" selection-start-line="124" selection-start-column="79" selection-end-line="124" selection-end-column="79" />
-              <folding>
-                <element signature="e#7359#7926#0#HTML" />
-                <element signature="e#10076#12829#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/components/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tour-detail.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/pages/tour-detail.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="40" column="78" lean-forward="true" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compass.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/compass.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
-              <caret line="1536" column="16" lean-forward="true" selection-end-line="3789" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sass/frontend/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="3766" lean-forward="true" selection-start-line="3766" selection-end-line="3766" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SetupSeeder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/SetupSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivitySeeder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/ActivitySeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="15" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="21" selection-end-column="15" />
+            <state relative-caret-position="272">
+              <caret line="25" selection-start-line="20" selection-end-line="35" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -198,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Models/Activity/Category.php" />
         <option value="$PROJECT_DIR$/app/Models/Blog/Category.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_20_103117_create_blogs_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_20_103843_create_tags_table.php" />
@@ -230,7 +215,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_01_28_144023_create_testimonials_table.php" />
         <option value="$PROJECT_DIR$/database/factories/TestimonialsFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/TestimonialSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Models/Utilities/Helper.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
@@ -249,6 +233,8 @@
         <option value="$PROJECT_DIR$/public/css/compass.css" />
         <option value="$PROJECT_DIR$/resources/views/frontend/components/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/frontend/app.css" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/console.sql" />
       </list>
     </option>
   </component>
@@ -359,11 +345,11 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="40" />
-    <option name="width" value="1637" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1088" />
+    <option name="y" value="-861" />
+    <option name="width" value="1096" />
+    <option name="height" value="1896" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -405,22 +391,6 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Auth" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -442,13 +412,6 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Models" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Blog" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Models" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Booking" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
@@ -494,20 +457,24 @@
             <path>
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
               <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="svg" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
               <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
@@ -526,14 +493,14 @@
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
               <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
               <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
@@ -565,13 +532,6 @@
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpdev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="cpdev" type="b2602c69:ProjectViewProjectNode" />
@@ -610,7 +570,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="option&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Models/Utilities/Option.php&#10;web.&#9;FILE&#9;file://D:/Code/Compass/cpdev/routes/web.php&#10;main&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;Main&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;MainController&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;web.php&#9;FILE&#9;file://D:/Code/Compass/cpdev/routes/web.php&#10;nav&#9;FILE&#9;file://D:/Code/Compass/cpdev/resources/views/frontend/components/navbar.blade.php&#10;ma&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;Tag&#9;null&#9;null&#10;create_blo&#9;FILE&#9;file://D:/Code/Compass/cpdev/database/migrations/2019_01_20_103117_create_blogs_table.php&#10;Acti&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Models/Activity/Activity.php&#10;create activit&#9;null&#9;null&#10;MainCo&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;web&#9;FILE&#9;file://D:/Code/Compass/cpdev/routes/web.php&#10;webp&#9;FILE&#9;file://D:/Code/Compass/cpdev/webpack.mix.js&#10;maincontr&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;route.&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Models/Activity/Route.php" />
+    <property name="SearchEverywhereHistoryKey" value="Mai&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;web&#9;FILE&#9;file://D:/Code/Compass/cpdev/routes/web.php&#10;option&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Models/Utilities/Option.php&#10;web.&#9;FILE&#9;file://D:/Code/Compass/cpdev/routes/web.php&#10;main&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;Main&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;MainController&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;web.php&#9;FILE&#9;file://D:/Code/Compass/cpdev/routes/web.php&#10;nav&#9;FILE&#9;file://D:/Code/Compass/cpdev/resources/views/frontend/components/navbar.blade.php&#10;ma&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;Tag&#9;null&#9;null&#10;create_blo&#9;FILE&#9;file://D:/Code/Compass/cpdev/database/migrations/2019_01_20_103117_create_blogs_table.php&#10;Acti&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Models/Activity/Activity.php&#10;create activit&#9;null&#9;null&#10;MainCo&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;webp&#9;FILE&#9;file://D:/Code/Compass/cpdev/webpack.mix.js&#10;maincontr&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Http/Controllers/Frontend/MainController.php&#10;route.&#9;FILE&#9;file://D:/Code/Compass/cpdev/app/Models/Activity/Route.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
@@ -677,6 +637,14 @@
       <workItem from="1548343853540" duration="321000" />
       <workItem from="1548555414712" duration="11451000" />
       <workItem from="1548767475118" duration="9142000" />
+      <workItem from="1548947479380" duration="416000" />
+      <workItem from="1548948884869" duration="685000" />
+      <workItem from="1549027261616" duration="6196000" />
+      <workItem from="1549096746765" duration="2572000" />
+      <workItem from="1549160668237" duration="9086000" />
+      <workItem from="1549197117962" duration="5942000" />
+      <workItem from="1549240723593" duration="1502000" />
+      <workItem from="1549370428476" duration="1266000" />
     </task>
     <task id="LOCAL-00001" summary="rework frontend">
       <created>1547992130194</created>
@@ -689,32 +657,32 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53399000" />
+    <option name="totallyTimeSpent" value="81064000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <frame x="-1088" y="-861" width="1096" height="1896" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19251925" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19281046" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.3278867" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27413127" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.15938166" />
+      <window_info anchor="right" id="Database" order="3" weight="0.30791506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="11" weight="0.33551198" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="11" visible="true" weight="0.35920176" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3278867" />
     </layout>
   </component>
@@ -729,114 +697,24 @@
     <option name="LAST_COMMIT_MESSAGE" value="rework frontend" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_042225_create_routes_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        <state relative-caret-position="918">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Activity/Addon.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Utilities/Helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+        <state relative-caret-position="595">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
-    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/qacompass/table/activities">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_043241_create_prices_table.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/qacompass/table/blogs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/qacompass/table/prices">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/qacompass/table/addons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_062628_create_addons_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ActivityAddonFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ActivityPriceFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/components/subheader.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="91" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/frontend/plugins/main.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-936" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/frontend/plugins/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="105" selection-start-line="5" selection-start-column="105" selection-end-line="5" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/frontend/plugins/popper.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state relative-caret-position="272">
+          <caret line="25" selection-start-line="20" selection-end-line="35" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -868,49 +746,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/frontend/compass.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/frontend/app.scss" />
-    <entry file="file://$PROJECT_DIR$/database/factories/TestimonialsFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_28_144023_create_testimonials_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Utilities/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/TestimonialsFactory.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_28_144023_create_testimonials_table.php" />
     <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/qacompass/table/options">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="11" selection-start-line="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -921,20 +763,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_24_131316_create_options_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/TestimonialSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_24_131316_create_options_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/seeds/TestimonialSeeder.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/pages/contactus.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -956,79 +786,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Utilities/Option.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_041016_create_activities_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
-          <folding>
-            <element signature="e#49#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Activity/Activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ActivityFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/SetupSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/ActivitySeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="15" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="93" lean-forward="true" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_041016_create_activities_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/factories/ActivityFactory.php" />
+    <entry file="file://$PROJECT_DIR$/database/seeds/SetupSeeder.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/_layout/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1036,42 +796,335 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/pages/tour-detail.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/ActivitySeeder.php" />
+    <entry file="file://$PROJECT_DIR$/resources/sass/frontend/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="40" column="78" lean-forward="true" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/pages/landing.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="124" column="79" lean-forward="true" selection-start-line="124" selection-start-column="79" selection-end-line="124" selection-end-column="79" />
-          <folding>
-            <element signature="e#7359#7926#0#HTML" />
-            <element signature="e#10076#12829#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/components/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+        <state relative-caret-position="64226">
+          <caret line="3778" column="5" selection-start-line="3778" selection-start-column="5" selection-end-line="3778" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/compass.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="1536" column="16" lean-forward="true" selection-end-line="3789" selection-end-column="1" />
+        <state relative-caret-position="26112">
+          <caret line="1536" column="16" selection-end-line="3789" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/frontend/app.css">
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/pages/tour-detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="3766" lean-forward="true" selection-start-line="3766" selection-end-line="3766" />
+        <state relative-caret-position="680">
+          <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/components/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/pages/landing.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="124" column="79" selection-start-line="124" selection-start-column="79" selection-end-line="124" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="91" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-914" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Activity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.SCHEMA:draft">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.SCHEMA:draft</OriginalElement>
+          <nodes>
+            <node x="220.99999999999994" y="885.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_addons</node>
+            <node x="1407.79" y="398.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.basket_payments</node>
+            <node x="433.03999999999985" y="33.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.categories</node>
+            <node x="0.0" y="1447.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.taggables</node>
+            <node x="1192.79" y="409.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.baskets</node>
+            <node x="556.79" y="409.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.blogs</node>
+            <node x="782.79" y="475.5">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.password_resets</node>
+            <node x="755.5" y="0.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.users</node>
+            <node x="9.5" y="1279.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.tags</node>
+            <node x="932.0" y="1279.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.types</node>
+            <node x="712.0" y="1279.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.options</node>
+            <node x="1341.165" y="11.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.agents</node>
+            <node x="483.0" y="1279.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.testimonials</node>
+            <node x="239.0" y="1279.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.images</node>
+            <node x="1171.0" y="1279.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.migrations</node>
+            <node x="76.24555555555548" y="11.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.cities</node>
+            <node x="657.0" y="808.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_prices</node>
+            <node x="328.7899999999999" y="288.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities</node>
+            <node x="974.79" y="376.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.inquiries</node>
+            <node x="438.99999999999994" y="907.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.basket_items</node>
+            <node x="0.0" y="940.0">68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_routes</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.baskets" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.users">
+              <point x="-48.75" y="-114.0" />
+              <point x="1241.54" y="258.0" />
+              <point x="952.5999999999999" y="258.0" />
+              <point x="87.60000000000002" y="114.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_prices" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities">
+              <point x="0.0" y="-213.0" />
+              <point x="756.0" y="778.0" />
+              <point x="510.7899999999999" y="778.0" />
+              <point x="78.0" y="235.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_routes" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities">
+              <point x="50.25" y="-81.0" />
+              <point x="150.75" y="778.0" />
+              <point x="354.7899999999999" y="778.0" />
+              <point x="-78.0" y="235.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.taggables" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.tags">
+              <point x="0.0" y="-47.5" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.blogs" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.categories">
+              <point x="-51.5" y="-114.0" />
+              <point x="608.29" y="248.0" />
+              <point x="564.2899999999998" y="248.0" />
+              <point x="43.75" y="81.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.users">
+              <point x="69.33333333333326" y="-235.0" />
+              <point x="502.12333333333316" y="258.0" />
+              <point x="777.3999999999999" y="258.0" />
+              <point x="-87.60000000000002" y="114.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.basket_items" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities">
+              <point x="0.0" y="-114.0" />
+              <point x="538.0" y="788.0" />
+              <point x="458.7899999999999" y="788.0" />
+              <point x="26.0" y="235.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.categories">
+              <point x="-5.6843418860808015E-14" y="-235.0" />
+              <point x="432.78999999999985" y="268.0" />
+              <point x="476.78999999999985" y="268.0" />
+              <point x="-43.75" y="81.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.blogs" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.users">
+              <point x="51.5" y="-114.0" />
+              <point x="711.29" y="268.0" />
+              <point x="821.2" y="268.0" />
+              <point x="-43.799999999999955" y="114.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.inquiries" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.users">
+              <point x="0.0" y="-147.0" />
+              <point x="1073.79" y="268.0" />
+              <point x="908.8" y="268.0" />
+              <point x="43.799999999999955" y="114.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_routes" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.cities">
+              <point x="-50.25" y="-81.0" />
+              <point x="50.25" y="268.0" />
+              <point x="119.99555555555548" y="268.0" />
+              <point x="-43.75" y="103.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.cities">
+              <point x="-69.33333333333337" y="-235.0" />
+              <point x="363.45666666666654" y="268.0" />
+              <point x="207.49555555555548" y="268.0" />
+              <point x="43.75" y="103.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.password_resets" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.users">
+              <point x="0.0" y="-47.5" />
+              <point x="868.79" y="268.0" />
+              <point x="865.0" y="268.0" />
+              <point x="0.0" y="114.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.basket_payments" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.agents">
+              <point x="0.0" y="-125.0" />
+              <point x="1518.29" y="268.0" />
+              <point x="1472.415" y="268.0" />
+              <point x="43.75" y="103.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_addons" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activities">
+              <point x="0.0" y="-136.0" />
+              <point x="319.99999999999994" y="788.0" />
+              <point x="406.7899999999999" y="788.0" />
+              <point x="-26.0" y="235.0" />
+            </edge>
+            <edge source="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.baskets" target="68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.agents">
+              <point x="48.75" y="-114.0" />
+              <point x="1339.04" y="268.0" />
+              <point x="1384.915" y="268.0" />
+              <point x="-43.75" y="103.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="725.0" y="323.0" />
+          <SelectedNodes>
+            <node>68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.TABLE:draft.activity_addons</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/activities">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/categories">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/cities">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/types">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/testimonials">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/taggables">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/tags">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/schema/draft/table/inquiries">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" selection-start-line="20" selection-end-line="35" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Utilities/Option.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Activity/Activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Utilities/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="70" column="5" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="70" selection-end-column="5" />
         </state>
       </provider>
     </entry>

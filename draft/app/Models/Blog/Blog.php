@@ -5,6 +5,8 @@ namespace App\Models\Blog;
 use App\Models\User;
 use App\Models\Utility\Category;
 use App\Models\Utility\Comment;
+use App\Models\Utility\Image;
+use App\Models\Utility\Tag;
 use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
@@ -14,7 +16,7 @@ class Blog extends Model
 
     protected $primaryKey = 'id';
 
-    protected $with = ['category','user'];
+    protected $with = ['category', 'user', 'tags'];
     protected $withCount = ['allComments'];
 
     public function category()
@@ -24,7 +26,7 @@ class Blog extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class,'id','user_id');
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 
     public function scopePublished($query, $value)
@@ -44,7 +46,19 @@ class Blog extends Model
 
     public function allComments()
     {
-        return  $this->morphMany(Comment::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class)
+            ->withPivot('id', 'blog_id', 'tag_id')
+            ->withTimestamps();
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class,'sources');
     }
 
 }

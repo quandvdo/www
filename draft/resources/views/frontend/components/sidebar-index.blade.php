@@ -105,7 +105,7 @@
             </div>
         </form>
     </div>
-    @include('frontend.components.partials.quick-contact')
+    @include('frontend.components.partials.sidebar.quick-contact')
     <a href="#"><img src="{{asset('images/promotion.jpg')}}"
                      class="w-100 img-fluid mx-auto d-block mt-4"
                      alt=""></a>

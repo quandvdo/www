@@ -175,6 +175,10 @@ $(document).ready(function () {
         .on('slide.bs.carousel slid.bs.carousel', toggleH).trigger('slide.bs.carousel')
         .on('slide.bs.carousel slid.bs.carousel', toggleC).trigger('slide.bs.carousel');
     $('.alert').alert();
+
+    $('.print-invoice').on('click', function() {
+        window.print();
+    })
 });
 
 //Instagram Feed
@@ -229,13 +233,13 @@ $(function () {
 
 
 //Run datepicker
-$(function () {
+/*$(function () {
     if ($('body').hasClass('datepicker')) {
         $(function () {
             $("#datepicker").datepicker();
         });
     }
-});
+});*/
 
 // Run Jquery Touch
 $(function () {
@@ -245,6 +249,7 @@ $(function () {
 
     }
 });
+
 
 
 /*

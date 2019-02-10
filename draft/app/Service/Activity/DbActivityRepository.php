@@ -23,7 +23,7 @@ class DbActivityRepository implements ActivityRepositoryInterface
     }
 
 
-    public function find($slug)
+    public function findBySlug($slug)
     {
         return $this->activity::Slug($slug)->first();
     }

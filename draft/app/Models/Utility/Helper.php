@@ -52,4 +52,25 @@ class Helper
 
         return substr($content, 0, $cutOffLength) . '...';
     }
+
+    public static function bookingStatus($status)
+    {
+        switch ($status){
+            case 0:
+                return '<span class="badge badge-danger">Cancel</span>';
+                break;
+            case 1:
+                return '<span class="badge badge-info">Received</span>';
+                break;
+            case 2:
+                return '<span class="badge badge-warning">Verification Required</span>';
+                break;
+            case 3:
+                return '<span class="badge badge-success">Paid</span>';
+                break;
+            case 4:
+                return '<span class="badge badge-success">Completed</span>';
+                break;
+        }
+    }
 }

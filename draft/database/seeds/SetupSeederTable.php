@@ -99,7 +99,7 @@ We can organize private tours or group tours, budget packages or luxury trip all
         foreach ($citiesSorted as $city) {
             \App\Models\Utility\City::create([
                 'country' => 'VN',
-                'title' => $city . ' ' . $faker->words(3,true),
+                'title' => $city . ' ' . $faker->words(3, true),
                 'slug' => \App\Models\Utility\Helper::slug($city),
                 'area' => rand(1, 50) . 'Km2',
                 'description' => $faker->text(rand(2000, 6000)),
@@ -145,5 +145,13 @@ We can organize private tours or group tours, budget packages or luxury trip all
             'description' => 'Eat Like the Locals. At Classic Journeys, you\'ll find food is a foolproof way into the hearts, homes, and history of the places you visit, and you\'ll experience it with every meal. All breakfasts and many lunches are included. We treat you to many dinners, as well, often with complimentary wine. Thanks to the insider connections of your local guides and the small size of our groups, you can get you into the kind of terrific local cafes where the neighbors eat. In many restaurants, chefs prepare special meals for you. And so what if the menus aren’t in English? Your guide will translate, point you to favorite dishes, and pass on your compliments to the chef. '
         ]);
         factory(\App\Models\Utility\Category::class, 20)->create();
+
+        \App\Models\Booking\Agent::create([
+            'name' => 'Compass Travel',
+            'phone' => '0933450123',
+            'address' => '25 Yen Ninh, Hoan Kiem, Ha Noi',
+            'email' => 'handle@compasstravel.vn',
+            'cost' => 0
+        ]);
     }
 }

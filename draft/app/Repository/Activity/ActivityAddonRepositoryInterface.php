@@ -11,5 +11,5 @@ namespace App\Repository\Activity;
 
 interface ActivityAddonRepositoryInterface
 {
-
+    public function freeItem();
 }
