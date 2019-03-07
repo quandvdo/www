@@ -1,5 +1,5 @@
 @if(Session::has('message'))
-    <div class="container">
+    <div class="container no-print">
         <div class="alert {{ Session::get('alert-class', 'alert-info') }} alert-fixed" role="alert">
             {{ Session::get('message') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

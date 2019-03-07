@@ -43,4 +43,6 @@ Route::post('booking', 'Booking\BasketController@store')->name('booking.store');
 Route::get('booking/{id}', 'Booking\BasketController@show')->name('booking.show');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::domain('admin.draft.test')->group(function(){
+    Route::get('/', 'HomeController@index')->name('home');
+});

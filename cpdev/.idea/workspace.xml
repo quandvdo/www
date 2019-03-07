@@ -2,41 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41bb3f55-17d1-465a-952d-5756c5b5c2fe" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../draft/public/images/adventure-beach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../draft/public/images/blog-single.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../draft/public/images/destinations.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../draft/public/images/lakegirl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../draft/public/images/promotion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../draft/public/images/search.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../draft/public/images/toronto.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/68cd5d9c-ecbb-4785-94d9-b2bbc4ac4b6e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../draft/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Http/ViewComposers/FrontendComposer.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Http/ViewComposers/FrontendComposer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Models/Activity/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Models/Activity/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Models/Blog/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Models/Blog/Blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Models/Utility/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Models/Utility/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Repository/Activity/ActivityRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Repository/Activity/ActivityRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Repository/Blog/BlogRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Repository/Blog/BlogRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Service/Activity/DbActivityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Service/Activity/DbActivityRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/app/Service/Blog/DbBlogRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/app/Service/Blog/DbBlogRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/database/migrations/2019_02_03_033826_create_blogs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/database/migrations/2019_02_03_033826_create_blogs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/database/seeds/ActivitySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/database/seeds/ActivitySeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/public/css/compass.css" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/public/css/compass.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/frontend/sass/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/frontend/sass/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/components/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/components/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/components/sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/blog-index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/destination-index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/landing.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/pages/tour-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/resources/views/frontend/components/alert.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/resources/views/frontend/components/alert.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../draft/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../draft/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1088">
-              <caret line="70" column="5" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="70" selection-end-column="5" />
+              <caret line="70" column="5" selection-start-line="62" selection-start-column="1" selection-end-line="70" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -345,7 +314,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1088" />
     <option name="y" value="-861" />
     <option name="width" value="1096" />
@@ -359,7 +328,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -567,6 +535,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -645,6 +614,7 @@
       <workItem from="1549197117962" duration="5942000" />
       <workItem from="1549240723593" duration="1502000" />
       <workItem from="1549370428476" duration="1266000" />
+      <workItem from="1551494771182" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="rework frontend">
       <created>1547992130194</created>
@@ -657,11 +627,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81064000" />
+    <option name="totallyTimeSpent" value="81683000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1088" y="-861" width="1096" height="1896" extended-state="7" />
-    <editor active="true" />
+    <frame x="-1088" y="-861" width="1096" height="1896" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -670,7 +639,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.3278867" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27413127" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27992278" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.30791506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1124,7 +1093,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
-          <caret line="70" column="5" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="70" selection-end-column="5" />
+          <caret line="70" column="5" selection-start-line="62" selection-start-column="1" selection-end-line="70" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="@localhost" uuid="5a67d100-859c-4b14-b981-1f0a09fc9d6e">
+      <database-info product="MySQL" version="8.0.13" jdbc-version="4.2" driver-name="MariaDB connector/J" driver-version="2.2.1">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>toor</user-name>
+      <introspection-schemas>*:compassjson,final,voyager</introspection-schemas>
+    </data-source>
+  </component>
+</project>
