@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use TCG\Voyager\Models\Page;
 
 class CreatePagesTable extends Migration
 {
@@ -13,17 +13,18 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
+        // Create table for storing roles
         Schema::create('pages', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('author_id');
+            $table->increments('id');
+            $table->integer('author_id');
             $table->string('title');
-            $table->text('except')->nullable();
+            $table->text('excerpt')->nullable();
             $table->text('body')->nullable();
             $table->string('image')->nullable();
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
-            $table->enum('status',['ACTIVE', 'INACTIVE']);
+            $table->enum('status', Page::$statuses)->default(Page::STATUS_INACTIVE);
             $table->timestamps();
         });
     }
@@ -35,6 +36,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::drop('pages');
     }
 }

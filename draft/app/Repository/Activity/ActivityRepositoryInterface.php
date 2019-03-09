@@ -23,7 +23,7 @@ interface ActivityRepositoryInterface
 
     public function show($id);
 
-    public function findBySlug432($slug);
+    public function findBySlug($slug);
 
     public function getRandomLocation();
 
