@@ -31,6 +31,7 @@ class MenuItemsTableSeeder extends Seeder
             ])->save();
         }
 
+
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
             'title'   => __('voyager::seeders.menu_items.media'),

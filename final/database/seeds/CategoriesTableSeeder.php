@@ -92,6 +92,21 @@ class CategoriesTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($categoryDataType, 'type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Category Type',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 4,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($categoryDataType, 'name');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -124,6 +139,24 @@ class CategoriesTableSeeder extends Seeder
                     ],
                 ],
                 'order' => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($categoryDataType, 'description');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Description',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details' => [
+                    'default' => "Default text",
+                ],
+                'order'        => 5,
             ])->save();
         }
 
@@ -180,20 +213,26 @@ class CategoriesTableSeeder extends Seeder
 
         //Content
         $category = Category::firstOrNew([
-            'slug' => 'category-1',
+            'slug' => 'uncategorized',
+            'type' => 'Blog',
         ]);
         if (!$category->exists) {
             $category->fill([
-                'name' => 'Category 1',
+                'type' => 'Blog',
+                'name' => 'Uncategorized',
+                'description' => 'Default text',
             ])->save();
         }
 
         $category = Category::firstOrNew([
             'slug' => 'category-2',
+            'type' => 'Blog',
         ]);
         if (!$category->exists) {
             $category->fill([
+                'type' => 'Blog',
                 'name' => 'Category 2',
+                'description' => 'Default text',
             ])->save();
         }
     }
