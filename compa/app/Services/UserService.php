@@ -62,4 +62,15 @@ class UserService implements UserRepository
     {
         return $this->user->findOrFail($id);
     }
+
+    /**
+     * @param $avatar
+     * @param $id
+     */
+    public static function updateAvatar($avatar, $id)
+    {
+        $user = User::find($id);
+        $user->avatar = $avatar;
+        $user->save();
+    }
 }

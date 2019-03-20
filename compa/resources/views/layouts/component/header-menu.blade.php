@@ -156,8 +156,13 @@
         <!-- User avatar dropdown -->
         <div class="dropdown">
             <div class="user col align-self-end">
-                <img src="{{asset('assets/images/faces/1.jpg')}}" id="userDropdown" alt="" data-toggle="dropdown"
+                @if(Auth::user()->avatar == 'users/default.png')
+                <img src="{{asset('assets/images/users/default.png')}}" id="userDropdown" alt="" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">
+                @else
+                    <img src="{{asset('uploads/avatars/'. Auth::user()->avatar)}}" id="userDropdown" alt="" data-toggle="dropdown"
+                         aria-haspopup="true" aria-expanded="false">
+                @endif
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <div class="dropdown-header">

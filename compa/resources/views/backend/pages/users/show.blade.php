@@ -1,16 +1,11 @@
 @extends('layouts.app')
 
 @section('main-content')
-    <div class="breadcrumb">
-        <h1>Compass Travel</h1>
-        <ul>
-            <li><a href="{{route('dashboard.index')}}">Admin</a></li>
-            <li>Dashboard</li>
-        </ul>
-
-    </div>
-
-    <div class="separator-breadcrumb border-top"></div>
-    {{-- end of breadcrumb --}}
+    @include('backend.partials.breadcrumbs',[
+         'title' => 'User Detail',
+         'prelink' => route('users.index'),
+         'prepage' => 'All User List',
+         'page' => $user->name . ' - <span class="badge badge-success>' . strtoupper($user->roles[0]->name) . '</span>'
+        ])
 
 @endsection;

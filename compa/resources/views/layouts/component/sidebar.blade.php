@@ -2,14 +2,21 @@
   <div class="side-content-wrap">
             <div class="sidebar-left open" data-perfect-scrollbar data-suppress-scroll-x="true">
                 <ul class="navigation-left">
-                    <li class="nav-item {{ request()->is('admin') ? 'active' : '' }}" data-item="dashboard">
+                    <li class="nav-item {{ Route::currentRouteName() == 'dashboard.index' ? 'active' : '' }}">
                         <a class="nav-item-hold" href="{{route('dashboard.index')}}">
                             <i class="nav-icon i-Bar-Chart"></i>
                             <span class="nav-text">Dashboard</span>
                         </a>
                         <div class="triangle"></div>
                     </li>
-                    <li class="nav-item" data-item="uikits">
+                    <li class="nav-item {{ request()->is('admin/users*') ? 'active' : '' }}" data-item="users">
+                        <a class="nav-item-hold" href="{{route('users.index')}}">
+                            <i class="nav-icon i-Administrator"></i>
+                            <span class="nav-text">Users</span>
+                        </a>
+                        <div class="triangle"></div>
+                    </li>
+  {{--                  <li class="nav-item" data-item="uikits">
                         <a class="nav-item-hold" href="#">
                             <i class="nav-icon i-Library"></i>
                             <span class="nav-text">UI kits</span>
@@ -44,13 +51,7 @@
                         </a>
                         <div class="triangle"></div>
                     </li>
-                    <li class="nav-item" data-item="sessions">
-                        <a class="nav-item-hold" href="/test.html">
-                            <i class="nav-icon i-Administrator"></i>
-                            <span class="nav-text">Sessions</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </li>
+
                     <li class="nav-item" data-item="others">
                         <a class="nav-item-hold" href="/test.html">
                             <i class="nav-icon i-Double-Tap"></i>
@@ -64,13 +65,52 @@
                             <span class="nav-text">Doc</span>
                         </a>
                         <div class="triangle"></div>
-                    </li>
+                    </li>--}}
                 </ul>
             </div>
 
             <div class="sidebar-left-secondary" data-perfect-scrollbar data-suppress-scroll-x="true">
+
+                <ul class="childNav" data-parent="users">
+                    <li class="nav-item">
+                        <a href="{{route('users.index')}}" class="{{Route::currentRouteName() == 'users.index' ? 'open' : ''}}">
+                            <i class="nav-icon i-Checked-User"></i>
+                            <span class="item-name">All Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('users.create')}}">
+                            <i class="nav-icon i-Add-User"></i>
+                            <span class="item-name">Add New Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="nav-icon i-Find-User"></i>
+                            <span class="item-name">All Roles</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="nav-icon i-Find-User"></i>
+                            <span class="item-name">Add New Roles</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="nav-icon i-Find-User"></i>
+                            <span class="item-name">All Permission</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="nav-icon i-Find-User"></i>
+                            <span class="item-name">Edit Permission</span>
+                        </a>
+                    </li>
+                </ul>
                 <!-- Submenu Dashboards -->
-                <ul class="childNav" data-parent="dashboard">
+                {{--<ul class="childNav" data-parent="dashboard">
                     <li class="nav-item">
                         <a class="{{ Route::currentRouteName()=='dashboard_version_1' ? 'open' : '' }}" href="#dashboard_version_1">
                             <i class="nav-icon i-Clock-3"></i>
@@ -95,7 +135,7 @@
                             <span class="item-name">Version 4</span>
                         </a>
                     </li>
-                </ul>
+                </ul>--}}
 {{--                <ul class="childNav" data-parent="forms">
                     <li class="nav-item">
                         <a href="#forms-basic">

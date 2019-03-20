@@ -8,6 +8,10 @@ use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use function public_path;
+use Validator;
 use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
@@ -53,18 +57,40 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = [
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:6',
+            'file' => 'max:10000|mines:jpg,png,bmp,gif'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('users.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        if ($request->hasFile('avatar')) {
+            $avatarRaw = $request->file('avatar');
+            $filename = uniqid() . '.' . $avatarRaw->getClientOriginalExtension();
+            $avatarResize = Image::make($avatarRaw->getRealPath())->resize(128, 128);
+            $avatar = 'avatars/' . $filename;
+            $avatarResize->save(public_path('uploads/') . $avatar);
+        } else {
+            $avatar = 'users/default.png';
+        }
+        $user = $this->user->create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'role_id' => $request->role_id,
-            'avatar' => self::$avatar
-        ];
+            'avatar' => $avatar
+        ]);
         $role = $this->role->show($request->role_id);
-        $user = $this->user->create($data);
         $user->roles()->attach($role);
-        Log::info('New User has been added!');
-//        Session::flash('SUCCESS', 'User has been added!');
+
+        Log::info('USER: ' . $user->email . '-' . $role->name . ' has been added as New User!');
+        notify()->success($user->email . ' has been added successfully as new ' . $role->name . '!');
         return redirect()->route('users.index');
     }
 
@@ -76,7 +102,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->user->show($id);
+        return view('backend.pages.users.show')->with('user', $this->user->show($id));
     }
 
     /**

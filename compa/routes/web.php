@@ -30,7 +30,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['backend:admin,manager']], f
     Route::namespace('Api')->group(function () {
         Route::post('allRoles', 'ApiController@getAllRoles')->name('ajax.roles.data');
         Route::post('allUsers', 'DatatablesController@getAllUser')->name('dt.users.data');
-
     });
 
 });

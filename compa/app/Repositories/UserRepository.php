@@ -17,4 +17,6 @@ interface UserRepository extends BaseRepository
 
     public function getAll();
 
+    public static function updateAvatar($avatar, $id);
+
 }

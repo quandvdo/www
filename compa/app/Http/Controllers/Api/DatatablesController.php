@@ -26,6 +26,13 @@ class DatatablesController extends Controller
                         <a href="' . self::$urlUser . $users->id . '" class="btn btn-xs btn-danger pull-right"><i class="glyphicon glyphicon-destroy"></i> Delete</a>
                         ';
             })
+            ->editColumn('avatar', function($users){
+                if ($users->avatar == 'users/default.png') {
+                    return '/assets/images/' . $users->avatar ;
+                } else {
+                    return '/uploads/' . $users->avatar ;
+                }
+            })
             ->removeColumn('password')
             ->make(true);
     }

@@ -27,7 +27,6 @@ mix.combine([
 
 mix.js('resources/backend/js/script.js', 'public/assets/js/script.js')
     .sass('resources/backend/styles/sass/themes/lite-purple.scss', 'public/assets/css/theme.min.css')
-
     .options({
         processCssUrls: false
     })

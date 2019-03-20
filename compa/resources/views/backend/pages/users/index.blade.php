@@ -1,17 +1,12 @@
 @extends('layouts.app')
 
 @section('main-content')
-    <div class="breadcrumb">
-        <h1>All Users</h1>
-        <ul>
-            <li><a href="{{route('dashboard.index')}}">Dashboard</a></li>
-            <li>List of all User</li>
-        </ul>
-
-    </div>
-
-    <div class="separator-breadcrumb border-top"></div>
-    {{-- end of breadcrumb --}}
+    @include('backend.partials.breadcrumbs',[
+     'title' => 'All Users',
+     'prelink' => null,
+     'prepage' => null,
+     'page' => 'All user list'
+    ])
 
     <div class="row mb-4">
         <div class="col-md-12">
@@ -99,10 +94,10 @@
                         data: 'avatar',
                         name: 'avatar',
                         render: function (data, type, row, meta) {
-                            return '<img src="http://' + host + ':3000/assets/images/' + data + '"/>';
+                            return '<img src="' + data + '">'
                         }
                     },
-                    {data: 'created_at', name: 'created_at'},
+                    {data: 'created_at', name: 'created_at', searchable: false},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

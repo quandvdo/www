@@ -168,6 +168,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Yoeunes\Notify\NotifyServiceProvider::class,
 
         /*
          * Application Service Providers...

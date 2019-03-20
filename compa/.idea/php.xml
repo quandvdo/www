@@ -103,6 +103,7 @@
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor" />
+      <path value="$PROJECT_DIR$/vendor/yoeunes/notify" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
